@@ -1,25 +1,19 @@
 module Main exposing (..)
 
+import Browser
 import Html exposing (..)
-import Html.Attributes exposing (..)
-
-
-(=>) : a -> b -> ( a, b )
-(=>) =
-    (,)
-
+import Html.Attributes exposing (src, class, href)
 
 
 ---- MODEL ----
 
 
 type alias Model =
-    ()
+    {}
 
 
-init : ( Model, Cmd Never )
 init =
-    ( (), Cmd.none )
+    {}
 
 
 
@@ -30,24 +24,23 @@ type Msg
     = NoOp
 
 
-update : Never -> Model -> ( Model, Cmd Never )
-update msg model =
-    model ! []
+update : Msg -> Model -> Model
+update _ model =
+    model
 
 
 
 ---- VIEW ----
 
 
-view : Model -> Html Never
-view model =
+view _ =
     div [ class "main" ]
         [ img [ class "logo", src "haskell.png" ] []
         , div [ class "links" ] (List.map renderLink links)
         ]
 
 
-renderLink : ( String, String ) -> Html Never
+renderLink : ( String, String ) -> Html a
 renderLink ( site, url ) =
     a
         [ class "link", href url ]
@@ -55,9 +48,10 @@ renderLink ( site, url ) =
 
 
 links =
-    [ "GitHub" => "https://github.com/jjant"
-    , "Twitter" => "https://twitter.com/_jjant"
-    , "LinkedIn" => "https://www.linkedin.com/in/julianantonielli"
+    [ ( "GitHub", "https://github.com/jjant" )
+    , ( "Blog", "https://medium.com/@jjant" )
+    , ( "Twitter", "https://twitter.com/_jjant" )
+    , ( "LinkedIn", "https://www.linkedin.com/in/julianantonielli" )
     ]
 
 
@@ -65,11 +59,10 @@ links =
 ---- PROGRAM ----
 
 
-main : Program Never Model Never
+main : Program () Model Msg
 main =
-    Html.program
+    Browser.sandbox
         { view = view
         , init = init
         , update = update
-        , subscriptions = always Sub.none
         }
