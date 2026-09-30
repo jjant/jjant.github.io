@@ -92,6 +92,15 @@
         frame.hidden = false;
         toolbar.hidden = false;
         state.textContent = "Prototype loaded";
+        // The standalone page keeps its setup above the game. In this play room,
+        // start at the board so mobile users can see the first move immediately.
+        const playArea = frame.contentDocument?.querySelector(".play");
+        if (playArea) {
+          frame.contentWindow.scrollTo({
+            top: playArea.getBoundingClientRect().top + frame.contentWindow.scrollY,
+            behavior: "instant",
+          });
+        }
         frame.focus({ preventScroll: true });
       };
       frame.onerror = () => {
