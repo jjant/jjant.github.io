@@ -10,12 +10,16 @@ and offers retry, close and a separate tab. Closing unloads the iframe and retur
 focus. Opening scrolls to the board; settings remain above it. The same-origin iframe is the reviewed game, not a sandbox for untrusted
 mods. `site.js` controls loading only; it contains no game rules.
 
+Rules v9 add spikes, collision impacts and recoverable key/coin throws. Potions
+shatter and wet the impact tile. T/G/V aim; Q/E change range; Enter confirms.
+Older replays require their matching historical game.
+
 Playing starts in manual mode with simulated faults off. `play.html#lab` opens
 the bot with fault injection. Browser runs are not saved automatically across tab
 closure: export a replay to keep one. Replay files require matching game/content versions;
 a replay library, seeking and taking control are future work.
 
-The handheld illustration is a labeled concept. Both PNGs are actual gameplay:
+The handheld illustration is a labeled concept. Both PNGs are actual gameplay captured on the earlier v7 campaign:
 
 | Asset | Scene |
 | --- | --- |
