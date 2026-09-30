@@ -4,10 +4,13 @@ Public route: https://jjant.github.io/dungeon/. A browser roguelike prototype wi
 eight authored floors of rooms and corridors, two guardians, and time to think
 between turns. Start at the title screen; victory and defeat menus offer another
 expedition. The static landing page uses no external fonts or telemetry.
+`play.html` contains the stripped ReleaseSafe Zig/Wasm game, with fixed memory
+and assertions enabled. Private source, manuals, engineering evidence and replay
+archives stay private; publish only this page and the reviewed compiled assets.
 
 Rules v12 build on fire, water, spikes, shoves and recoverable metal throws:
 
-* Throw a key into a closed chest to unlock it. The key is consumed; bump into
+* Throw a key into a locked chest to unlock it. The key is consumed; bump into
   the chest later to open it and collect its treasure once.
 * Blobs take no damage or interruption from keys and coins. Glass potions still
   hurt and interrupt them.
