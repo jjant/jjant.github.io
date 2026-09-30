@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="660" viewBox="0 0 640 660">
+  <defs>
+    <linearGradient id="case" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d7ddc9"/><stop offset=".45" stop-color="#bec8ab"/><stop offset="1" stop-color="#a8b398"/></linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2=".2" y2="1"><stop stop-color="#354b3d"/><stop offset="1" stop-color="#23362e"/></linearGradient>
+    <linearGradient id="button" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#c46443"/><stop offset="1" stop-color="#ac452b"/></linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffffff" stop-opacity=".06"/><stop offset=".5" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#ffffff" stop-opacity=".02"/></linearGradient>
+    <radialGradient id="lamp"><stop stop-color="#d9c17a" stop-opacity=".16"/><stop offset="1" stop-color="#d9c17a" stop-opacity="0"/></radialGradient>
+    <filter id="shadow" x="-.3" y="-.3" width="1.6" height="1.7"><feDropShadow dx="12" dy="22" stdDeviation="16" flood-color="#293d25" flood-opacity=".2"/></filter>
+    <pattern id="tiles" width="23" height="23" patternUnits="userSpaceOnUse"><path d="M0 0h23v23H0z" fill="#2c4033"/><path d="M2 2h19v19H2z" fill="#314738"/><path d="M4 4h8M4 6h4" stroke="#3c4f3b" stroke-width="1"/></pattern>
+    <pattern id="wall" width="23" height="23" patternUnits="userSpaceOnUse"><path d="M0 0h23v23H0z" fill="#74826a"/><path d="M1 1h21v20H1z" fill="#849075"/><path d="M3 3h17M3 3v15" stroke="#9aa38b" stroke-width="2"/><path d="M1 21h22v2H1z" fill="#556a52"/></pattern>
+  </defs>
+
+  <circle cx="335" cy="318" r="240" fill="#e0e3d4"/>
+  <circle cx="335" cy="318" r="221" stroke="#c7ceba" stroke-width="1" stroke-dasharray="2 7" fill="none"/>
+  <path d="M70 138h16m-8-8v16M558 398h16m-8-8v16" stroke="#9ca68b" stroke-width="1.3"/>
+  <path d="m513 148 6 9 10 1-7 7 1 10-10-5-9 5 2-11-7-7 10-1Z" fill="none" stroke="#b54629"/>
+
+  <g transform="translate(99 70) rotate(-9 220 254)" filter="url(#shadow)">
+    <path d="M48 27h331q24 0 24 27v399q0 67-69 67H48q-26 0-26-27V54q0-27 26-27Z" fill="#7d8b70" stroke="#748367" stroke-width="1.5"/>
+    <path d="M43 16h331q24 0 24 27v399q0 67-69 67H43q-26 0-26-27V43q0-27 26-27Z" fill="url(#case)" stroke="#95a084" stroke-width="1.5"/>
+    <path d="M43 20h330q21 0 21 24v397q0 62-63 64H43q-22 0-22-25V44q0-24 22-24Z" fill="none" stroke="#e1e6d5" stroke-opacity=".65"/>
+    <path d="M31 69H384" stroke="#8f9b7f" stroke-width="1"/>
+    <text x="45" y="51" font-family="monospace" font-size="11" fill="#4f6246" letter-spacing="2.5">DUNGEON</text>
+    <text x="300" y="50" font-family="monospace" font-size="7" fill="#5a6a50" letter-spacing="1.2">POCKET / 01</text>
+    <rect x="40" y="89" width="333" height="276" rx="13" fill="#8c987f"/>
+    <rect x="39" y="85" width="333" height="276" rx="13" fill="url(#rim)" stroke="#243c2d" stroke-width="1.5"/>
+    <path d="M53 95h302" stroke="#62715b" stroke-opacity=".6"/>
+    <circle cx="52" cy="116" r="2.5" fill="#b3c577"/>
+    <rect x="63" y="109" width="285" height="222" rx="2" fill="#182d25"/>
+    <g clip-path="url(#screen-clip)">
+      <rect x="71" y="137" width="269" height="184" fill="url(#tiles)"/>
+      <path d="M71 137h92v23H94v115h46v23H71ZM209 137h131v184H209v-23h108V160H209ZM163 183h69v23h-46v46h-23ZM255 229h23v46h-46v-23h23ZM140 275h46v46h-23v-23h-23Z" fill="url(#wall)"/>
+      <path d="M115 138h23v21h-23ZM94 207h23v23H94ZM294 183h23v23h-23Z" fill="#506444"/>
+      <path d="M98 211h14m-11 4h8M118 142h16m-12 5h7m169 40h12m-9 4h7" stroke="#728259" stroke-width="2"/>
+      <ellipse cx="206" cy="257" rx="78" ry="67" fill="url(#lamp)"/>
+      <g fill="#718457"><path d="M128 247h3v4h3v3h-4v-2h-4v-2h2ZM285 290h3v3h3v3h-5v-2h-2v-2h1Z"/><path d="M149 169h5v2h-5ZM305 262h6v2h-6Z" opacity=".7"/></g>
+      <g transform="translate(203 251)">
+        <ellipse cx="0" cy="19" rx="11" ry="4" fill="#14271f" opacity=".65"/>
+        <path d="M-6-9H6v3h3v7H-9v-7h3Z" fill="#dfc99a"/>
+        <path d="M-9 2H9v7H6v7H1v-5h-3v5h-5V9h-3Z" fill="#b6c595"/>
+        <path d="M-5-4h3v3h-3m7 0h3v-3H2" fill="#233629"/>
+        <path d="M-9 4h-4v10h5" fill="#b65335"/>
+        <path d="M11 3h4v13h-3" fill="#d4b778"/>
+        <path d="M10 1h7v6h-7Z" fill="#e2bc68"/>
+        <path d="M12-3h3v5h-3Z" fill="#f4dba1"/>
+      </g>
+      <g transform="translate(268 175)">
+        <path d="M-9-7H8v3h3v13h-23V-4h3Z" fill="#b78144"/>
+        <path d="M-9-5H8v3H-9Z" fill="#ddbb75"/>
+        <path d="M-11 1h22v3h-22Z" fill="#533e28"/>
+        <path d="M-2 0h5v6h-5Z" fill="#e0c580"/>
+      </g>
+      <g transform="translate(128 185)" fill="#b45740">
+        <path d="M-8-5h4v-4h8v4h4V9H-8Z"/>
+        <path d="M-4 1h2v3h-2m6-3h2v3H2" fill="#f3d8aa"/>
+      </g>
+      <path d="M293 303v-4h-14v-4h-14v-4h-14" fill="none" stroke="#c1cda2" stroke-width="3"/>
+      <rect x="63" y="109" width="285" height="222" fill="url(#glass)"/>
+    </g>
+    <path d="M71 131h269" stroke="#55654d" stroke-width=".7"/>
+    <g fill="#c87957"><path d="m77 117 3-3 3 3 3-3 3 3v3l-6 5-6-5ZM94 117l3-3 3 3 3-3 3 3v3l-6 5-6-5ZM111 117l3-3 3 3 3-3 3 3v3l-6 5-6-5Z"/></g>
+    <text x="231" y="123" font-family="monospace" font-size="7" fill="#bdc89e" letter-spacing="1">ONE MORE ROOM?</text>
+    <text x="199" y="349" text-anchor="middle" font-family="monospace" font-size="6.5" fill="#a7b397" letter-spacing="2">A SMALL ADVENTURE</text>
+    <g transform="translate(101 421)">
+      <circle r="40" fill="#9ca88b" stroke="#b5c0a5"/>
+      <path d="M-12-34h24v21h21v24H12v21h-24V11h-21v-24h21Z" fill="#50614b"/>
+      <path d="M-12-37h24v21h21V8H12v21h-24V8h-21v-24h21Z" fill="#2e4333" stroke="#203629" stroke-width="1"/>
+      <path d="M-8-33h17v17h20" fill="none" stroke="#64715b" stroke-width="1.5"/>
+      <circle cy="-4" r="8" fill="#293e2e" stroke="#4b5f43"/>
+      <path d="m-3-24 3-4 3 4m-27 16-4 3 4 3m20 20 3 4 3-4m21-13 4-3-4-3" fill="none" stroke="#859077" stroke-width="1.5"/>
+    </g>
+    <g transform="translate(289 415) rotate(-12)">
+      <rect x="-52" y="-23" width="117" height="52" rx="26" fill="#a1ac91"/>
+      <circle cx="-24" cy="3" r="21" fill="#7e3b29"/>
+      <circle cx="34" cy="3" r="21" fill="#7e3b29"/>
+      <circle cx="-24" cy="-1" r="20" fill="url(#button)" stroke="#973d28"/>
+      <circle cx="34" cy="-1" r="20" fill="url(#button)" stroke="#973d28"/>
+      <path d="M-37-9a15 15 0 0 1 24-4M21-9a15 15 0 0 1 24-4" fill="none" stroke="#de9776" stroke-opacity=".6"/>
+      <text x="-24" y="4" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#eed2b0">B</text>
+      <text x="34" y="4" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#eed2b0">A</text>
+    </g>
+    <g transform="translate(181 468) rotate(-12)" fill="#6a7b5c">
+      <rect x="0" y="0" width="28" height="7" rx="3.5"/><rect x="44" y="0" width="28" height="7" rx="3.5"/>
+    </g>
+    <g transform="translate(310 465) rotate(-28)" stroke="#839174" stroke-width="3.5" stroke-linecap="round"><path d="M0 0v23M10 0v23M20 0v23M30 0v23M40 0v23"/></g>
+    <circle cx="38" cy="487" r="3" fill="#93a080"/><path d="m36 485 4 4" stroke="#c5ceb5"/>
+  </g>
+  <g transform="translate(481 539) rotate(12)">
+    <rect width="84" height="93" rx="5" fill="#d7c7a2" stroke="#a79773"/>
+    <path d="M10 0h64v17H10Z" fill="#b4a280"/>
+    <rect x="9" y="27" width="66" height="52" rx="2" fill="#eae4ce" stroke="#c3b690"/>
+    <path d="m42 37 13 8v15l-13 8-13-8V45Z" fill="#536448"/>
+    <path d="M38 59V46h8v13h-3v-6h-2v6Z" fill="#e2dbc3"/>
+    <path d="M18 87h8m4 0h8m4 0h8m4 0h8" stroke="#947c4e" stroke-width="4"/>
+  </g>
+  <path d="M473 590c-27 18-57 17-72 8" fill="none" stroke="#839072" stroke-width="1" stroke-dasharray="3 4"/>
+  <text x="86" y="620" font-family="Georgia,serif" font-style="italic" font-size="16" fill="#657451" transform="rotate(-4 86 620)">Make your next move count.</text>
+  <defs><clipPath id="screen-clip"><rect x="63" y="109" width="285" height="222" rx="2"/></clipPath></defs>
+</svg>
