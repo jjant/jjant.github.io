@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#eeeee4">
-    <meta name="description" content="Eight floors. Two guardians. A pocket roguelike where fire, water and a well-timed shove turn the room into part of your plan.">
+    <meta name="description" content="Eight authored floors. Two guardians. Throw a key, chase a thief, turn a trap into an opening. A small browser roguelike, in the making.">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Dungeon — Small dungeon. Big decisions.">
-    <meta property="og:description" content="Eight floors, two guardians, and room to improvise. Read the warning. Make your move.">
+    <meta property="og:description" content="Eight authored floors, two guardians, and a key with more than one use. Read the warning. Make your move.">
     <meta property="og:url" content="https://jjant.github.io/dungeon/">
     <link rel="canonical" href="https://jjant.github.io/dungeon/">
     <link rel="icon" type="image/svg+xml" href="./assets/mark.svg">
@@ -34,8 +34,8 @@
         <div class="hero-copy">
           <p class="eyebrow"><span class="tiny-cross" aria-hidden="true">✦</span> A pocket roguelike, in the making</p>
           <h1 id="hero-title">Small dungeon.<br>Big <em>decisions.</em></h1>
-          <p class="hero-description">Eight floors. Two guardians.<br>One move can change the room.</p>
-          <p class="hero-detail">Descend through gardens, foundries and crypts.<br class="desktop-break"> Read the warning. Make your own opening.</p>
+          <p class="hero-description">Eight authored floors. Two guardians.<br>One move can change the room.</p>
+          <p class="hero-detail">Explore rooms and winding corridors.<br class="desktop-break"> Read the warning. Make your own opening.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#play">Play Dungeon <span aria-hidden="true">↘</span></a>
             <span class="availability" data-release-copy>Browser prototype<br>Preparing release</span>
@@ -64,7 +64,7 @@
             <span class="entry-number">I.</span>
             <div>
               <h3>Every floor asks something new</h3>
-              <p>Take a detour for treasure, save a potion, find the stairs. Two guardians stand between you and the final exit. Each must fall before its staircase opens.</p>
+              <p>Rooms give way to corridors, treasure and tempting detours. Save a potion; find the stairs. Two guardians stand between you and the final exit. Each must fall before its staircase opens.</p>
             </div>
             <svg class="entry-icon" viewBox="0 0 56 56" aria-hidden="true"><path d="m7 14 14-5 14 5 14-5v33l-14 5-14-5-14 5Z M21 9v33m14-28v33" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m13 29 5-6 9 11 13-14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3"/><path d="m38 18 5 5m0-5-5 5" stroke="#b54629" stroke-width="2"/></svg>
           </article>
@@ -93,7 +93,8 @@
             <p class="eyebrow">In the prototype <span class="small-pill">Ready to combine</span></p>
             <h2 id="elements-title">A little magic.<br>A lot of <em>possibility.</em></h2>
             <p>Light the reeds. Douse a firebreak. Shove an enemy onto spikes or into a wall. Simple rules turn the room into part of your plan.</p>
-            <p class="element-note">Throw a key to hurt, a coin to interrupt, or a potion to soak a coal enemy. Recover your metal before moving on.<br>Coal resists fire; water hurts it.</p>
+            <p class="element-note"><strong>Unlock now. Open later.</strong> Throw a key into a closed chest’s lock: the key is used up, but the treasure can wait. Bump into the chest to open it when you’re ready.</p>
+            <p class="element-note"><strong>Mind the blob.</strong> Keys and coins do no damage and won’t interrupt its attack. A glass potion still hurts and interrupts it.</p>
           </div>
           <figure class="element-figure">
           <div class="element-specimens" role="list" aria-label="Three actions in the prototype">
@@ -119,6 +120,43 @@
             </div>
           </div>
           <figcaption>Action illustrations · not gameplay captures</figcaption>
+          </figure>
+          <figure class="combination-story" aria-labelledby="chain-title">
+            <figcaption>
+              <h3 id="chain-title">One key. A few <em>detours.</em></h3>
+              <p>An empty-handed thief catches a key or coin if it survives the throw, then flees. Defeat it to get your metal back.</p>
+            </figcaption>
+            <ol class="combination-steps" role="list">
+              <li>
+                <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true"><circle cx="17" cy="17" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m23 23 23 23m-8-8 6-6m-12 0 6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                <h4>Throw a key</h4>
+                <p>There’s more than one way to use it.</p>
+                <span class="chain-arrow" aria-hidden="true">→</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true"><path d="M9 42V28C9 16 19 8 28 6c9 2 19 10 19 22v14M14 31c2-10 9-16 14-18 5 2 12 8 14 18Z M18 34c0 8 5 13 10 13s10-5 10-13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 36h3m8 0h3" stroke="currentColor" stroke-width="2.5"/></svg>
+                <h4>Follow the thief</h4>
+                <p>Your key is going places.</p>
+                <span class="chain-arrow" aria-hidden="true">→</span>
+              </li>
+              <li>
+                <svg class="chain-hazard" viewBox="0 0 56 56" width="48" height="48" aria-hidden="true"><path d="m5 46 8-19 8 19 8-19 8 19 8-19 6 19ZM28 5v14m-6-6 6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h4>Finish on spikes</h4>
+                <p>A well-placed shove can end the chase.</p>
+                <span class="chain-arrow" aria-hidden="true">→</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true"><circle cx="28" cy="13" r="6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M28 19v12m0-5h6M6 34l12 11h21l12-12c-2-4-5-4-8-1l-7 5H23m13 0c3-3 1-6-2-6H22l-5-4H6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h4>Take it back</h4>
+                <p>Step onto the fallen key.</p>
+                <span class="chain-arrow" aria-hidden="true">→</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true"><path d="M8 28v-6c0-8 8-13 20-13s20 5 20 13v6m-40 0h40v19H8ZM16 12v16m24-16v16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M24 26h8v10h-8Zm4 3v4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+                <h4>Unlock a chest</h4>
+                <p>Use it in the lock. Bump to open later.</p>
+              </li>
+            </ol>
           </figure>
         </div>
       </section>
@@ -157,7 +195,7 @@
             <p class="eyebrow">03 / The play room</p>
             <h2 id="play-title">There’s always<br><em>one more room.</em></h2>
           </div>
-          <p>A little time. A little courage.<br>Your next expedition starts here.</p>
+          <p>Start a run from the title screen.<br>Win or lose, the next expedition is a menu away.</p>
         </div>
         <div class="player-shell">
           <div class="player-chrome">
