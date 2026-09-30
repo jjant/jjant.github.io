@@ -86,7 +86,9 @@ h1 em { color: var(--ember); }
 .elements-copy h2 { font-size: clamp(36px, 3.7vw, 49px); }
 .small-pill { display: inline-block; margin-left: 6px; border: 1px solid #a1ab94; border-radius: 20px; padding: 2px 8px; color: #485d3c; font-size: 8px; letter-spacing: .8px; vertical-align: middle; }
 .elements-copy > p:not(.eyebrow) { max-width: 350px; margin-top: 20px; font-size: 13px; color: #4f5c4b; }
-.elements-copy .development-note { font: 10px/1.7 var(--mono) !important; }
+.elements-copy > p.element-note { font: 11px/1.7 var(--mono); }
+.element-figure { min-width: 0; }
+.element-figure figcaption { margin-top: 29px; text-align: center; color: var(--muted); font: 9px/1.6 var(--mono); }
 .element-specimens { display: flex; align-items: center; gap: 14px; }
 .specimen { flex: 1; min-width: 0; }
 .specimen-art { display: grid; place-items: center; aspect-ratio: .72; border: 1px solid #aab39d; background: #e7e9dd; border-radius: 70px 70px 3px 3px; position: relative; }
@@ -98,6 +100,16 @@ h1 em { color: var(--ember); }
 .specimen-label { display: flex; align-items: center; justify-content: space-between; margin-top: 16px; color: var(--ink); font: 18px var(--serif); }
 .specimen-label > span { font: 8px var(--mono); color: #5a6653; }
 .combination-mark { color: #778268; margin-top: -24px; font: 20px var(--serif); }
+.encounters { border-bottom: 1px solid var(--line); }
+.encounters-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; margin-bottom: 36px; }
+.encounters-heading .eyebrow { color: var(--ember); margin-bottom: 23px; }
+.encounters-heading > p { color: var(--muted); font-size: 14px; padding-bottom: 5px; }
+.encounter-frames { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px; }
+.encounter-frames img { width: 100%; background: #07191b; border: 1px solid #213b32; border-radius: 3px; image-rendering: pixelated; }
+.encounter-frames figcaption { padding-top: 20px; }
+.capture-label { color: var(--muted); font: 9px/1.6 var(--mono); letter-spacing: .6px; text-transform: uppercase; }
+.encounter-frames h3 { margin-top: 7px; font: 26px/1.3 var(--serif); letter-spacing: -.6px; }
+.encounter-frames p { margin-top: 8px; max-width: 370px; color: var(--muted); font-size: 13px; }
 .play-heading { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 35px; }
 .play-heading > p { font-size: 14px; color: var(--muted); padding-bottom: 5px; }
 .player-shell { background: #243b30; color: #e9eedc; border: 1px solid #183123; border-radius: 5px; overflow: hidden; box-shadow: 0 8px 0 #d9dece; }
@@ -185,6 +197,10 @@ h1 em { color: var(--ember); }
   .element-specimens { max-width: 430px; width: 100%; margin-inline: auto; gap: 12px; padding: 0 7px 5px; }
   .specimen-art { aspect-ratio: .78; }
   .specimen-art svg { width: 65%; }
+  .encounters-heading { display: block; margin-bottom: 28px; }
+  .encounters-heading .eyebrow { margin-bottom: 18px; }
+  .encounters-heading > p { margin-top: 20px; font-size: 13px; }
+  .encounter-frames { grid-template-columns: 1fr; gap: 35px; }
   .play-heading { display: block; margin-bottom: 27px; }
   .play-heading > p { margin-top: 20px; font-size: 13px; }
   .player-chrome { padding: 16px; font-size: 8px; letter-spacing: .5px; }

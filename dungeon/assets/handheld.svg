@@ -94,6 +94,6 @@
     <path d="M18 87h8m4 0h8m4 0h8m4 0h8" stroke="#947c4e" stroke-width="4"/>
   </g>
   <path d="M473 590c-27 18-57 17-72 8" fill="none" stroke="#839072" stroke-width="1" stroke-dasharray="3 4"/>
-  <text x="86" y="620" font-family="Georgia,serif" font-style="italic" font-size="16" fill="#657451" transform="rotate(-4 86 620)">Take the long way home.</text>
+  <text x="86" y="620" font-family="Georgia,serif" font-style="italic" font-size="16" fill="#657451" transform="rotate(-4 86 620)">Make your next move count.</text>
   <defs><clipPath id="screen-clip"><rect x="63" y="109" width="285" height="222" rx="2"/></clipPath></defs>
 </svg>
