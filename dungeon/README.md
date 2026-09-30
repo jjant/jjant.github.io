@@ -11,7 +11,8 @@ focus. Opening scrolls to the board; settings remain above it. The same-origin i
 mods. `site.js` controls loading only; it contains no game rules.
 
 Playing starts in manual mode with simulated faults off. `play.html#lab` opens
-the bot with fault injection. Replay files require matching game/content versions;
+the bot with fault injection. Browser runs are not saved automatically across tab
+closure: export a replay to keep one. Replay files require matching game/content versions;
 a replay library, seeking and taking control are future work.
 
 The handheld illustration is a labeled concept. Both PNGs are actual gameplay:
