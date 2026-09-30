@@ -29,15 +29,17 @@ a replay library, seeking and taking control are future work.
 
 The handheld and action drawings are illustrations, not gameplay captures.
 The combination sequence uses inline SVG and readable ordered steps; it introduces
-no image assets. The existing PNGs below are gameplay captures from an earlier
-campaign and can be refreshed in place for the current rooms:
+no image assets. The PNGs below show the rules v12 eight-floor campaign, reached
+through ordinary play by the built-in explorer with seed 42 and simulated faults
+off. Both show a living guardian preparing its attack:
 
 | Asset | Scene |
 | --- | --- |
-| `assets/floor-3-boss.png` | Marshals Crossing, 3/8, turn 71; rammer guardian |
-| `assets/floor-8-boss.png` | The Last Bell, 8/8, turn 189; coal guardian |
+| `assets/floor-3-boss.png` | Marshals Crossing, 3/8, turn 114; rammer guardian |
+| `assets/floor-8-boss.png` | The Last Bell, 8/8, turn 227; coal guardian |
 
-Keep both filenames and their 488 × 367 dimensions when refreshing them. Keep
+The captures preserve the complete 320 × 240 game frame, scaled to 488 × 367
+with pixel smoothing off. Keep both filenames and dimensions when refreshing them. Keep
 launcher IDs, `data-game-ready`, `data-src`, `data-release-copy` and navigation
 anchors compatible with `site.js`. The combination strip reads across on desktop
 and down on smaller screens. No native download is offered by this page.
