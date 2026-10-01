@@ -6,8 +6,10 @@ assertions enabled, no iframe, external font, telemetry or account.
 `about.html` is the illustrated field guide. `play.html` redirects old links,
 preserving `#lab`. Private source, manuals and engineering evidence stay private.
 
-The compact view puts the board above a cross-shaped gamepad on phones, with a
-backpack for aiming, objects and help. Landscape puts controls beside the board.
+Phones default to a 2× close view with readable health, resources and turn text,
+a cross-shaped gamepad below and a backpack for aiming, objects and help.
+The camera retains the full throwing reach; “Vista completa” restores the full
+board without changing the run. Landscape puts controls beside the board.
 The Laboratory button changes the view without restarting or enabling faults;
 `#lab` initially starts the bot with simulated power cuts. Fullscreen depends on
 the browser. Runs live in the tab: export a replay before closing it. Replays need
