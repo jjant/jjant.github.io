@@ -37,10 +37,10 @@ a replay library, seeking and taking control are future work.
 
 The handheld and action drawings are illustrations, not gameplay captures.
 The combination sequence uses inline SVG and readable ordered steps; it introduces
-no image assets. The PNGs below predate wall visibility and ordered turn animation;
-replacement captures are pending. They show the rules v12 eight-floor campaign,
-reached through ordinary play by the built-in explorer with seed 42 and simulated
-faults off. Both show a living guardian preparing its attack:
+no image assets. The PNGs below show the version 13 eight-floor campaign with wall
+visibility, reached by the built-in explorer with seed 42 and simulated faults off.
+Both show a living, visible guardian preparing its attack after the turn's save
+has completed. Reduced motion is enabled for stable stills:
 
 | Asset | Scene |
 | --- | --- |
