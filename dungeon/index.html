@@ -68,11 +68,11 @@ main{max-width:1200px;padding:16px 24px 48px}.intro{align-items:center;gap:28px;
 .arcade.tools-open .action-card{display:block}.arcade .verbs button{background:#294339}.arcade .verbs small,.arcade .mechanics,.arcade .enemy-help{color:#c7d3b8}.arcade .verbs kbd{display:none}.arcade .aim-facts{color:#cbd8c4}
 .arcade .action-heading h3{font-size:23px}.arcade .water-supply,.arcade .water-supply strong{color:#8ed2de}.arcade .action-hint{color:#b8c9b2}.arcade .aim-panel{background:#1b3029}.arcade .enemy-key strong{color:#eaebcc}
 .arcade .drawer-close{float:right;margin:-5px -5px 10px 8px;min-height:40px}.arcade .action-heading{clear:both}
-@media(max-width:600px){
+@media(max-width:600px) and (orientation:portrait){
  .arcade{height:100dvh;overflow:hidden;overscroll-behavior:none}
- .arcade header{height:58px;padding:max(7px,env(safe-area-inset-top)) 12px 5px;gap:8px}.arcade header p,.arcade .mark,.arcade #about-game,.arcade #tools-toggle{display:none}
+ .arcade header{height:calc(58px + env(safe-area-inset-top));padding:calc(7px + env(safe-area-inset-top)) 12px 5px;gap:8px}.arcade header p,.arcade .mark,.arcade #about-game,.arcade #tools-toggle{display:none}
  .arcade .site-nav{gap:5px}.arcade .site-nav button{font-size:11px;padding:8px;min-height:36px}.arcade h1{font-size:16px;letter-spacing:2px}
- .arcade main{padding:0 8px max(8px,env(safe-area-inset-bottom));height:calc(100dvh - 58px)}.arcade .layout,.arcade .play,.arcade .screen-stack{height:100%}
+ .arcade main{padding:0 8px max(8px,env(safe-area-inset-bottom));height:calc(100dvh - 58px - env(safe-area-inset-top))}.arcade .layout,.arcade .play,.arcade .screen-stack{height:100%}
  .arcade .console{height:calc(100% - 34px);padding:10px 10px 14px;display:flex;flex-direction:column;border-radius:14px 14px 30px 14px}
  .arcade .console-title{font-size:8px;padding:0 2px 8px}.arcade .bezel{padding:4px;flex:0 1 auto;min-height:0;max-height:calc(100% - 235px);display:flex;align-items:center;justify-content:center}
  .arcade canvas{width:100%;height:auto;max-width:100%;max-height:100%;object-fit:contain}.arcade .console-footer{flex:none;min-height:144px;gap:8px;margin-top:auto;padding:8px 4px 0}
@@ -82,17 +82,18 @@ main{max-width:1200px;padding:16px 24px 48px}.intro{align-items:center;gap:28px;
  .arcade .flow-panel h3{font-size:18px}.arcade .flow-panel p{font-size:11px}.arcade .flow-options button{font-size:12px;padding:8px}.arcade #flow-hint{display:none}
  .arcade .action-card{top:62px;right:8px;bottom:max(8px,env(safe-area-inset-bottom));width:calc(100vw - 16px);padding:14px}
 }
-@media(max-height:540px) and (min-width:601px){
- .arcade{height:100dvh;overflow:hidden}.arcade header{height:48px;padding:6px 16px}.arcade header p{display:none}.arcade main{padding:0 12px}
- .arcade .play{max-width:1000px}.arcade .console{height:calc(100dvh - 80px);padding:8px 14px;display:grid;grid-template-columns:minmax(0,1fr) 250px;grid-template-rows:1fr 46px;gap:5px 18px}
+@media(max-height:540px) and (orientation:landscape){
+ .arcade{height:100dvh;overflow:hidden}.arcade header{height:48px;padding:6px max(16px,env(safe-area-inset-right)) 6px max(16px,env(safe-area-inset-left))}.arcade header p,.arcade .mark,.arcade #tools-toggle,.arcade #about-game{display:none}.arcade main{padding:0 max(12px,env(safe-area-inset-right)) env(safe-area-inset-bottom) max(12px,env(safe-area-inset-left))}
+ .arcade .play{max-width:1000px}.arcade .console{height:calc(100dvh - 80px - env(safe-area-inset-bottom));padding:8px 14px;display:grid;grid-template-columns:minmax(0,1fr) 270px;grid-template-rows:1fr 60px;gap:5px 18px}
  .arcade .console-title{display:none}.arcade .bezel{grid-column:1;grid-row:1/3;min-height:0;display:flex;align-items:center;padding:4px}
  .arcade canvas{height:100%;width:auto;max-width:100%;max-height:100%;object-fit:contain}.arcade .console-footer{grid-column:2;grid-row:1;align-self:center;margin:0;gap:8px}
- .arcade .dpad{grid-template-columns:repeat(3,38px);grid-template-rows:repeat(3,38px);gap:2px}.arcade .ab{grid-template-columns:repeat(2,55px);gap:4px}.arcade .ab button{min-height:42px;font-size:10px;padding:4px}
+ .arcade .dpad{grid-template-columns:repeat(3,44px);grid-template-rows:repeat(3,44px);gap:4px}.arcade .ab{grid-template-columns:repeat(2,58px);gap:4px}.arcade .ab button{min-height:44px;font-size:10px;padding:4px}
  .arcade #quick-aim{grid-column:2;grid-row:2;font-size:10px;min-height:0;padding:0}.arcade #message{margin:8px 4px;font-size:10px}
- .arcade .flow-panel{top:12px;left:24px;right:300px;max-height:calc(100% - 48px);padding:12px}.arcade .flow-panel p{font-size:10px}.arcade #flow-hint{display:none}
+ .arcade .flow-panel{top:12px;left:24px;right:320px;max-height:calc(100% - 48px);padding:12px}.arcade .flow-panel p{font-size:10px}.arcade #flow-hint{display:none}
  .arcade .action-card{top:52px;bottom:8px}
 }
 #closeup{font:inherit;letter-spacing:0;min-height:28px;padding:3px 9px;background:#243a31;border:1px solid #597562;color:#eee9ce;border-radius:6px}
+.arcade .ab #closeup{font-size:10px;line-height:1.15;min-height:44px;padding:4px}
 #closeup[aria-pressed=true]{border-color:#edc777;color:#edc777}
 .encounter-choice{border-top:1px solid #506055;margin-top:12px;padding-top:10px}
 .encounter-choice button{width:100%;min-height:44px;color:#edc777}
@@ -100,8 +101,8 @@ main{max-width:1200px;padding:16px 24px 48px}.intro{align-items:center;gap:28px;
 #view-hud{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px;font-size:13px;line-height:1.4;padding:7px 2px 0;font-variant-numeric:tabular-nums;color:#e5e7c9}
 #view-health{color:#f4a295}#view-gold,#view-keys{color:#f0c774}#view-water{color:#8fd0df}
 #view-note{font-size:11px;line-height:1.3;min-height:29px;margin:5px 2px 0;color:#cdd5bb}
-@media(max-width:600px){.arcade .console-title{align-items:center;padding-bottom:5px}.arcade .close-view .bezel{max-height:calc(100% - 286px)}.arcade #view-hud{font-size:12px;gap:3px 10px}.arcade .close-view #quick-aim{min-height:38px;font-size:10px}.arcade .close-view #view-note{font-size:10px;min-height:25px}.arcade #closeup{font-size:11px}}
-@media(max-height:540px) and (min-width:601px){.arcade .console-title{display:flex;position:absolute;z-index:1;right:24px;top:10px}.arcade .console-title>span{display:none}.arcade .console.close-view{grid-template-rows:minmax(0,1fr) auto 46px}.arcade .close-view .bezel{grid-row:1;max-height:none}.arcade .close-view #view-hud{grid-column:1;grid-row:2;font-size:11px;padding:0;gap:2px 8px}.arcade .close-view #view-note{grid-column:1;grid-row:3;font-size:10px;margin:0;min-height:0}.arcade .close-view .console-footer{grid-row:1/3}.arcade .close-view #quick-aim{grid-row:3}}
+@media(max-width:600px) and (orientation:portrait){.arcade .console-title{align-items:center;padding-bottom:5px}.arcade .close-view .bezel{max-height:calc(100% - 286px)}.arcade #view-hud{font-size:12px;gap:3px 10px}.arcade .close-view #quick-aim{min-height:38px;font-size:10px}.arcade .close-view #view-note{font-size:10px;min-height:25px}.arcade #closeup{font-size:11px}}
+@media(max-height:540px) and (orientation:landscape){.arcade .console-title{display:none}.arcade .console.close-view{grid-template-rows:minmax(0,1fr) auto 60px}.arcade .close-view .bezel{grid-row:1;max-height:none}.arcade .close-view #view-hud{grid-column:1;grid-row:2;font-size:11px;padding:0;gap:2px 8px}.arcade .close-view #view-note{grid-column:1;grid-row:3;font-size:10px;margin:0;min-height:0}.arcade .close-view .console-footer{grid-row:1/3}.arcade .close-view #quick-aim{grid-row:3}}
 </style>
 <body class="arcade">
 <svg class="enemy-symbols" aria-hidden="true"><defs>
@@ -119,11 +120,11 @@ main{max-width:1200px;padding:16px 24px 48px}.intro{align-items:center;gap:28px;
 <div class="layout">
 <section class="play" aria-label="Juego">
 <div class="screen-stack">
-<div class="console"><div class="console-title"><span>Pocket dungeon</span><button id="closeup" aria-pressed="false">Acercar</button></div><div class="bezel"><canvas id="screen" tabindex="0" width="320" height="240" aria-label="Mapa del dungeon. Flechas para moverte o apuntar; F chispa, R rociar, K empujar. T tira una llave, G una moneda, V una poción. H cura y Espacio espera al instante." aria-describedby="keyboard-help aim-reason"></canvas></div>
+<div class="console"><div class="console-title"><span>Pocket dungeon</span></div><div class="bezel"><canvas id="screen" tabindex="0" width="320" height="240" aria-label="Mapa del dungeon. Flechas para moverte o apuntar; F chispa, R rociar, K empujar. T tira una llave, G una moneda, V una poción. H cura y Espacio espera al instante." aria-describedby="keyboard-help aim-reason"></canvas></div>
 <div id="view-hud" hidden><span id="view-health"> </span><span id="view-floor"> </span><span id="view-keys"> </span><span id="view-gold"> </span><span id="view-potions"> </span><span id="view-water"> </span><span id="view-lamp"> </span></div>
 <p id="view-note" hidden> </p>
 <div id="quick-aim" class="play-only" role="status" aria-live="polite"><strong id="quick-aim-title">Tu turno. Sin prisa.</strong><span id="quick-aim-detail">Flechas para moverte. Mochila para combinar objetos y terreno.</span></div>
-<div class="console-footer"><div class="dpad" role="group" aria-label="Mover o elegir dirección"><button data-action="north" aria-label="Norte">↑</button><button data-action="west" aria-label="Oeste">←</button><button data-action="south" aria-label="Sur">↓</button><button data-action="east" aria-label="Este">→</button></div><div class="speaker" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div class="ab" role="group" aria-label="Acciones"><button class="play-only secondary" id="pad-tools" aria-controls="action-drawer">Mochila</button><button data-action="wait" aria-label="Esperar un turno al instante">Esperar</button><button class="play-only" id="pad-confirm">Confirmar</button><button class="play-only" id="pad-cancel">Cancelar</button><button data-action="heal" aria-label="Usar una poción al instante">Poción</button></div></div></div>
+<div class="console-footer"><div class="dpad" role="group" aria-label="Mover o elegir dirección"><button data-action="north" aria-label="Norte">↑</button><button data-action="west" aria-label="Oeste">←</button><button data-action="south" aria-label="Sur">↓</button><button data-action="east" aria-label="Este">→</button></div><div class="speaker" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div class="ab" role="group" aria-label="Acciones"><button class="play-only secondary" id="pad-tools" aria-controls="action-drawer">Mochila</button><button data-action="wait" aria-label="Esperar un turno al instante">Esperar</button><button class="play-only" id="pad-confirm">Confirmar</button><button class="play-only" id="pad-cancel">Cancelar</button><button data-action="heal" aria-label="Usar una poción al instante">Poción</button><button id="closeup" aria-pressed="false">Acercar</button></div></div></div>
 
 <section id="flow-panel" class="flow-panel" aria-labelledby="flow-title" hidden><h3 id="flow-title"></h3><p id="flow-summary" role="status" aria-live="polite"></p><div class="flow-options"><button data-flow="0"></button><button data-flow="1"></button><button data-flow="2"></button><button data-flow="3"></button></div><div id="encounter-choice" class="encounter-choice" hidden><button id="encounter-new">Probar dos encuentros</button><p id="encounter-help">Botín robado y ataques cruzados. Dos salas para experimentar.</p></div><p id="flow-hint"></p></section>
 <div class="toolbar"><button id="pause" class="primary">Pausar</button><button id="step">Un paso</button><button id="cut" class="cut">↯ Cortar energía</button><label><input id="turn-motion" type="checkbox" checked> Animar turnos</label><label>Bot / replay <input id="speed" aria-label="Pasos por segundo" type="range" min="1" max="180" value="12"><span id="speed-label">12/s</span></label></div>
