@@ -10,6 +10,8 @@ Phones default to a 2× close view with readable health, resources and turn text
 a cross-shaped gamepad below and a backpack for aiming, objects and help.
 The camera retains the full throwing reach; “Vista completa” restores the full
 board without changing the run. Landscape puts controls beside the board.
+Confirmed loot labels linger across quick moves; reduced motion keeps the text
+still and returns to idle after it expires. New inputs always skip attack motion.
 The Laboratory button changes the view without restarting or enabling faults;
 `#lab` initially starts the bot with simulated power cuts. Fullscreen depends on
 the browser. Runs live in the tab: export a replay before closing it. Replays need
