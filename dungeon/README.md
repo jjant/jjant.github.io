@@ -1,63 +1,25 @@
 # Dungeon
 
-Public route: https://jjant.github.io/dungeon/. A browser roguelike prototype with
-eight authored floors of rooms and corridors, two guardians, and time to think
-between turns. Start at the title screen; victory and defeat menus offer another
-expedition. The static landing page uses no external fonts or telemetry.
-`play.html` contains simulator/replay version 13, built with Zig 0.15.2 in stripped
-ReleaseSafe mode, with fixed 320 KiB Wasm memory and assertions enabled.
-Private source, manuals, engineering evidence and replay
-archives stay private; publish only this page and the reviewed compiled assets.
+https://jjant.github.io/dungeon/ runs the game directly. `index.html` is a
+self-contained, stripped ReleaseSafe Zig/Wasm build: fixed 320 KiB memory,
+assertions enabled, no iframe, external font, telemetry or account.
+`about.html` is the illustrated field guide. `play.html` redirects old links,
+preserving `#lab`. Private source, manuals and engineering evidence stay private.
 
-Walls hide actors; explored terrain stays grey when it leaves view. Choose an
-action, aim at highlighted cells with the arrow keys, then confirm. Aiming and
-canceling don’t spend a turn. Turns animate in order: player → enemy → environment.
-New input skips the visuals.
+The compact view puts the board above a cross-shaped gamepad on phones, with a
+backpack for aiming, objects and help. Landscape puts controls beside the board.
+The Laboratory button changes the view without restarting or enabling faults;
+`#lab` initially starts the bot with simulated power cuts. Fullscreen depends on
+the browser. Runs live in the tab: export a replay before closing it. Replays need
+matching engine/content versions.
 
-The rules build on fire, water, spikes, shoves and recoverable metal throws:
+Publish the generated `zig build web -Dstrip-web=true` artifact only after its
+browser checks and visual review. Check desktop, narrow portrait and landscape,
+title/end menus, rapid inputs, touch aiming/canceling, laboratory and replay
+export/import. Chromium touch emulation is not physical Safari/Android acceptance.
+The private PR and public PR record source version and validation for each update.
 
-* Throw a key into a locked chest to unlock it. The key is consumed; bump into
-  the chest later to open it and collect its treasure once.
-* Blobs take no damage or interruption from keys and coins. Glass potions still
-  hurt and interrupt them.
-* A thief that survives a thrown key or coin catches it if unladen, then flees.
-  Defeat it to drop its metal at the death cell. Step onto the item to recover it.
-* Combine those rules: throw a key, finish the thief with a shove onto spikes,
-  recover the key, then use it to unlock a chest. The illustrated chain shows
-  one possible sequence; a shove must actually defeat the thief to release it.
-
-The launcher fetches the game only after **Start playing**, checks its response,
-and offers retry, close and a separate tab. Closing unloads the iframe and returns
-focus. Opening scrolls to the board; settings remain above it. The same-origin iframe is the reviewed game, not a sandbox for untrusted
-mods. `site.js` controls loading only; it contains no game rules.
-
-Playing starts in manual mode with simulated faults off. `play.html#lab` opens
-the bot with fault injection. Browser runs are not saved automatically across tab
-closure: export a replay to keep one. Replay files require matching game/content versions;
-a replay library, seeking and taking control are future work.
-
-The handheld and action drawings are illustrations, not gameplay captures.
-The combination sequence uses inline SVG and readable ordered steps; it introduces
-no image assets. The PNGs below show the version 13 eight-floor campaign with wall
-visibility, reached by the built-in explorer with seed 42 and simulated faults off.
-Both show a living, visible guardian preparing its attack after the turn's save
-has completed. Reduced motion is enabled for stable stills:
-
-| Asset | Scene |
-| --- | --- |
-| `assets/floor-3-boss.png` | Marshals Crossing, 3/8, turn 114; rammer guardian |
-| `assets/floor-8-boss.png` | The Last Bell, 8/8, turn 227; coal guardian |
-
-The captures preserve the complete 320 × 240 game frame, scaled to 488 × 367
-with pixel smoothing off. Keep both filenames and dimensions when refreshing them. Keep
-launcher IDs, `data-game-ready`, `data-src`, `data-release-copy` and navigation
-anchors compatible with `site.js`. The combination strip reads across on desktop
-and down on smaller screens. No native download is offered by this page.
-
-Preview from the repository root with any local HTTP server. Before publishing a
-new game, check the start/win/loss menus, keyboard/touch controls, pause, replay
-download/import, iframe close/reopen, initial board visibility and the separate
-tab at desktop and 390/320 px widths. Keep temporary screenshots and test
-fixtures outside the public checkout. Describe the current authored prototype
-when updating the copy; it remains a work in progress.
-[Third-party notices](notices.txt).
+Artwork in the field guide is illustrative. `assets/floor-3-boss.png` and
+`assets/floor-8-boss.png` are actual version 13 captures, seed 42, turns 114/227;
+they illustrate the guardians rather than certify the current build.
+Preview this directory with a local HTTP server. [Third-party notices](notices.txt).
