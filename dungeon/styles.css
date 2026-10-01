@@ -22,7 +22,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 button { font: inherit; }
 button:not(:disabled) { cursor: pointer; }
 button:disabled { cursor: default; }
-a:focus-visible, button:focus-visible, iframe:focus-visible { outline: 3px solid var(--ember); outline-offset: 6px; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--ember); outline-offset: 6px; }
 .player-shell :focus-visible { outline-color: #f3c37c; }
 img, svg { display: block; max-width: 100%; }
 img { height: auto; }
@@ -136,9 +136,6 @@ h1 em { color: var(--ember); }
 .button-light { background: #dde3cb; color: #263c2c; margin-top: 23px; min-height: 45px; font-size: 12px; }
 .button-light:disabled { background: transparent; color: #c2cebb; border-color: #7d8f72; }
 .button-light:not(:disabled):hover { background: #f1f5e7; }
-#game-frame { width: 100%; height: min(1000px, 85vh); min-height: 650px; border: 0; background: var(--paper); }
-.game-toolbar { display: flex; justify-content: space-between; gap: 20px; padding: 9px 23px; }
-.game-toolbar .text-link { color: #e9eedc; min-height: 44px; }
 .play-caption { display: flex; justify-content: space-between; gap: 22px; margin-top: 21px; font: 9px/1.6 var(--mono); color: var(--muted); }
 .laboratory { display: grid; grid-template-columns: 1.08fr 1fr 1fr; gap: 45px; padding-block: 60px 72px; border-block: 1px solid var(--line); }
 .lab-intro h2 { font-size: 43px; }
@@ -231,9 +228,6 @@ h1 em { color: var(--ember); }
   .player-placeholder > p:not(.eyebrow) { font-size: 11px; }
   .play-caption { display: block; font-size: 9px; line-height: 1.8; }
   .play-caption span { display: block; margin-top: 5px; }
-  .game-toolbar { gap: 10px; padding-inline: 16px; }
-  .game-toolbar .text-link { font-size: 11px; }
-  #game-frame { min-height: 650px; height: 85vh; }
   .laboratory { grid-template-columns: 1fr 1fr; gap: 30px 25px; padding-block: 45px; }
   .lab-intro { grid-column: 1 / -1; }
   .lab-intro h2 { font-size: 40px; }
