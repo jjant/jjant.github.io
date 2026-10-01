@@ -94,6 +94,9 @@ main{max-width:1200px;padding:16px 24px 48px}.intro{align-items:center;gap:28px;
 }
 #closeup{font:inherit;letter-spacing:0;min-height:28px;padding:3px 9px;background:#243a31;border:1px solid #597562;color:#eee9ce;border-radius:6px}
 #closeup[aria-pressed=true]{border-color:#edc777;color:#edc777}
+.encounter-choice{border-top:1px solid #506055;margin-top:12px;padding-top:10px}
+.encounter-choice button{width:100%;min-height:44px;color:#edc777}
+.encounter-choice p{font-size:12px;line-height:1.4;margin:7px 0 0;color:#c6cfb8}
 #view-hud{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px;font-size:13px;line-height:1.4;padding:7px 2px 0;font-variant-numeric:tabular-nums;color:#e5e7c9}
 #view-health{color:#f4a295}#view-gold,#view-keys{color:#f0c774}#view-water{color:#8fd0df}
 #view-note{font-size:11px;line-height:1.3;min-height:29px;margin:5px 2px 0;color:#cdd5bb}
@@ -122,7 +125,7 @@ main{max-width:1200px;padding:16px 24px 48px}.intro{align-items:center;gap:28px;
 <div id="quick-aim" class="play-only" role="status" aria-live="polite"><strong id="quick-aim-title">Tu turno. Sin prisa.</strong><span id="quick-aim-detail">Flechas para moverte. Mochila para combinar objetos y terreno.</span></div>
 <div class="console-footer"><div class="dpad" role="group" aria-label="Mover o elegir dirección"><button data-action="north" aria-label="Norte">↑</button><button data-action="west" aria-label="Oeste">←</button><button data-action="south" aria-label="Sur">↓</button><button data-action="east" aria-label="Este">→</button></div><div class="speaker" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div class="ab" role="group" aria-label="Acciones"><button class="play-only secondary" id="pad-tools" aria-controls="action-drawer">Mochila</button><button data-action="wait" aria-label="Esperar un turno al instante">Esperar</button><button class="play-only" id="pad-confirm">Confirmar</button><button class="play-only" id="pad-cancel">Cancelar</button><button data-action="heal" aria-label="Usar una poción al instante">Poción</button></div></div></div>
 
-<section id="flow-panel" class="flow-panel" aria-labelledby="flow-title" hidden><h3 id="flow-title"></h3><p id="flow-summary" role="status" aria-live="polite"></p><div class="flow-options"><button data-flow="0"></button><button data-flow="1"></button><button data-flow="2"></button><button data-flow="3"></button></div><p id="flow-hint"></p></section>
+<section id="flow-panel" class="flow-panel" aria-labelledby="flow-title" hidden><h3 id="flow-title"></h3><p id="flow-summary" role="status" aria-live="polite"></p><div class="flow-options"><button data-flow="0"></button><button data-flow="1"></button><button data-flow="2"></button><button data-flow="3"></button></div><div id="encounter-choice" class="encounter-choice" hidden><button id="encounter-new">Nueva partida corta: Cofre abierto</button><p id="encounter-help">Una llave, un ladrón y unos pinchos. ¿Quién se lleva el botín?</p></div><p id="flow-hint"></p></section>
 <div class="toolbar"><button id="pause" class="primary">Pausar</button><button id="step">Un paso</button><button id="cut" class="cut">↯ Cortar energía</button><label><input id="turn-motion" type="checkbox" checked> Animar turnos</label><label>Bot / replay <input id="speed" aria-label="Pasos por segundo" type="range" min="1" max="180" value="12"><span id="speed-label">12/s</span></label></div>
 <div id="message" role="status" aria-live="polite"></div>
 </div>
@@ -195,6 +198,8 @@ main{max-width:1200px;padding:16px 24px 48px}.intro{align-items:center;gap:28px;
 <script>
 'use strict';
 const ABI = {"metric":{"sim_version":0,"ticks":1,"turn":2,"hp":3,"coins":4,"keys":5,"potions":6,"phase":7,"failure":8,"commits":9,"cuts":10,"recoveries":11,"programmed":12,"erases_a":13,"erases_b":14,"navigation_high_water":15,"queue_high_water":16,"trace_overwritten":17,"input_discarded":18,"trace_count":19,"session_bytes":20,"game_bytes":21,"frame_bytes":22,"recorded_count":23,"rejected":24,"status":25,"player_x":26,"player_y":27,"input_count":28,"last_cut":29,"floor":30,"floor_count":31,"recording_capacity":32,"water":33,"water_used":34,"max_timeline_tick":35},"view":{"player_x":0,"player_y":1,"hp":2,"coins":3,"keys":4,"potions":5,"water":6,"floor":7,"turns_left":8},"aim":{"action":0,"reason":1,"target_x":2,"target_y":3,"destination_x":4,"destination_y":5,"water_cost":6,"impact_damage":7,"destination_spikes":8,"item_cost":9,"throw_damage":10,"interrupts":11,"unlocks_chest":12,"throw_hits_enemy":13,"catches_metal":14,"verb":15,"facing":16,"distance":17},"enemy":{"x":0,"y":1,"hp":2,"role":3,"boss":4,"phase":5,"intent":6,"target_x":7,"target_y":8,"damage":9,"carried_kind":10},"trace":{"tick":0,"kind":1,"detail":2,"turn":3},"recorded":{"tick":0,"kind":1,"value":2},"request_kind":{"action":0,"power_cut":1},"flow":{"screen":0,"selected":1,"count":2,"seed":3},"verb":{"move":0,"wait":1,"heal":2,"spark":3,"douse":4,"shove":5,"throw_key":6,"throw_coin":7,"throw_potion":8},"action":{"north":0,"east":1,"south":2,"west":3,"wait":4,"heal":5,"spark_north":6,"spark_east":7,"spark_south":8,"spark_west":9,"douse_self":10,"douse_north":11,"douse_east":12,"douse_south":13,"douse_west":14,"douse_north_two":15,"douse_east_two":16,"douse_south_two":17,"douse_west_two":18,"douse_north_three":19,"douse_east_three":20,"douse_south_three":21,"douse_west_three":22,"shove_north":23,"shove_east":24,"shove_south":25,"shove_west":26,"throw_key_north":27,"throw_key_east":28,"throw_key_south":29,"throw_key_west":30,"throw_key_north_two":31,"throw_key_east_two":32,"throw_key_south_two":33,"throw_key_west_two":34,"throw_key_north_three":35,"throw_key_east_three":36,"throw_key_south_three":37,"throw_key_west_three":38,"throw_coin_north":39,"throw_coin_east":40,"throw_coin_south":41,"throw_coin_west":42,"throw_coin_north_two":43,"throw_coin_east_two":44,"throw_coin_south_two":45,"throw_coin_west_two":46,"throw_coin_north_three":47,"throw_coin_east_three":48,"throw_coin_south_three":49,"throw_coin_west_three":50,"throw_potion_north":51,"throw_potion_east":52,"throw_potion_south":53,"throw_potion_west":54,"throw_potion_north_two":55,"throw_potion_east_two":56,"throw_potion_south_two":57,"throw_potion_west_two":58,"throw_potion_north_three":59,"throw_potion_east_three":60,"throw_potion_south_three":61,"throw_potion_west_three":62},"phase":{"ready":0,"saving":1,"acknowledging":2,"rebooting":3,"finished":4,"failed":5},"failure":{"none":0,"economy":1,"atomicity":2,"durability":3,"storage":4,"invalid_state":5,"tick_budget":6},"trace_kind":{"started":0,"moved":1,"blocked":2,"locked":3,"treasure":4,"hit":5,"defeated":6,"hurt":7,"healed":8,"empty":9,"waited":10,"escaped":11,"died":12,"erased":13,"payload":14,"sealed":15,"acknowledged":16,"power_cut":17,"recovered":18,"queue_full":19,"input_lost":20,"failed":21,"descended":22,"sparked":23,"doused":24,"shoved":25,"thrown":26,"unlocked":27},"screen":{"title":0,"playing":1,"loss":2,"victory":3,"fault":4},"flow_input":{"previous":0,"next":1,"confirm":2,"back":3},"status":{"playing":0,"escaped":1,"dead":2},"enemy_role":{"none":0,"chaser":1,"rammer":2,"coal":3,"sentry":4,"blob":5,"thief":6},"intent_phase":{"ready":0,"windup":1,"recover":2},"intent_kind":{"none":0,"strike":1,"charge":2,"spark":3,"shove":4},"drop_kind":{"empty":0,"key":1,"coin":2,"treasure":3},"preview_reason":{"ready":0,"terminal":1,"wall":2,"unseen":3,"no_fuel":4,"no_water":5,"no_enemy":6,"no_room":7,"no_heal":8,"no_key":9,"guardian":10,"no_item":11,"no_drop_room":12},"limits":{"frame_width":320,"frame_height":240,"board_x":32,"board_y":24,"board_width":256,"board_height":192,"tile_pixels":16,"world_cells":192,"enemies":4,"input_queue":16,"flash_pages":32,"pack_identity_bytes":16,"pack_encoded_bytes":2321}};
+const trialBytes=Uint8Array.from(atob('RE5HUAEARgF1aYN3u9N70Ncpm/Oo9+AnJ8SqFbsNB2v9R63hoKIzDwELT3BlbiBTZWNyZXQAAAAAAAAAAAAAAAAAAAAAAAAAAAABBwYOCgEAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBAQEAAQEBAQEBAAAAAAEBAQEBAAEBAQEBAQAAAAABAQEBAQABAQEBAQEAAAAAAQEBAQEBAQUBAQEBAAAAAAEBAQEBAAEBAQEBAQAAAAABAQEBAQABAQEBAQEAAAAAAAAAAAAAAQEBAQEBAAAAAAAAAAAAAAAAAAAAAQIAAAAAAAAAAAAAAAAAAAAAAAgGAf//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AAgHBgD//wAA//8AAP//AAA='),c=>c.charCodeAt(0));
+let trialSelected=false;
 const M=ABI.metric, A=ABI.aim, E=ABI.enemy, F=ABI.flow;
 const $ = id => document.getElementById(id);
 const labels = {
@@ -422,6 +427,9 @@ function flowText(index){
 function syncFlow(){
   const screen=api.flow_field(F.screen), count=api.flow_field(F.count), open=screen!==ABI.screen.playing;
   $('flow-panel').hidden=!open;
+  $('encounter-choice').hidden=![ABI.screen.title,ABI.screen.loss,ABI.screen.victory].includes(screen);
+  $('encounter-new').textContent=trialSelected?'Nueva campaña: ocho pisos':'Nueva partida corta: Cofre abierto';
+  $('encounter-help').textContent=trialSelected?'Volvé a la expedición completa.':'Una llave, un ladrón y unos pinchos. ¿Quién se lleva el botín?';
   if(!open){$('screen').setAttribute('aria-label','Dungeon. Flechas: mover. Espacio: esperar. H: curar.');return;}
   $('flow-title').textContent=flowText(0);$('flow-hint').textContent=flowText(1);
   $('flow-summary').textContent=screen===ABI.screen.title?`Semilla ${api.flow_field(F.seed)>>>0}. Elegir es gratis.`:
@@ -445,6 +453,17 @@ function navigateFlow(input,choice=false){
   stateChanged();$('screen').focus({preventScroll:true});
 }
 document.querySelectorAll('[data-flow]').forEach(b=>b.onclick=()=>navigateFlow(Number(b.dataset.flow),true));
+$('encounter-new').onclick=()=>{
+  if(!api||![ABI.screen.title,ABI.screen.loss,ABI.screen.victory].includes(api.flow_field(F.screen)))return;
+  const next=!trialSelected;
+  if(next)new Uint8Array(api.memory.buffer,api.pack_buffer(),trialBytes.length).set(trialBytes);
+  if(!api.load_pack(next?trialBytes.length:0)){say('No se pudo cargar el encuentro.');return;}
+  trialSelected=next;
+  $('seed').value=42;$('mode').value=1;$('faults').value=0;
+  $('pack-name').textContent=next?'Cofre abierto · un encuentro':'Campaña original · ocho pisos';
+  setRunning(false);
+  if(start())navigateFlow(0,true);
+};
 function paintFrame(now){
   // Explicitly finish causal motion; freezing its clock alone would freeze a hit.
   api.motion_enabled(reducedMotion.matches||!$('turn-motion').checked?0:1);
@@ -769,6 +788,7 @@ $('pack-open').onclick=()=>{clearAim(false);$('pack-file').click();};
 $('pack-default').onclick=()=>{
   clearAim(false);if(!validSeed())return;
   if(!api.load_pack(0)){say('No se pudo cargar la campaña original.');return;}
+  trialSelected=false;
   setRunning(false);if(start())$('pack-name').textContent=`Campaña original · ${api.metric(M.floor_count)} pisos`;
 };
 $('pack-file').onchange=async()=>{
@@ -785,6 +805,7 @@ $('pack-file').onchange=async()=>{
     if(!validSeed())return;
     new Uint8Array(api.memory.buffer,api.pack_buffer(),bytes.length).set(bytes);
     if(!api.load_pack(bytes.length))throw Error('El pack no tiene un formato válido para esta versión del juego');
+    trialSelected=false;
     setRunning(false);$('pack-name').textContent=file.name;start();
   }catch(e){if(current())say('No se cargó el pack: '+e.message);}
 };
