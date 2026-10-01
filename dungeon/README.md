@@ -4,8 +4,9 @@ Public route: https://jjant.github.io/dungeon/. A browser roguelike prototype wi
 eight authored floors of rooms and corridors, two guardians, and time to think
 between turns. Start at the title screen; victory and defeat menus offer another
 expedition. The static landing page uses no external fonts or telemetry.
-`play.html` contains the stripped ReleaseSafe Zig/Wasm game, with fixed memory
-and assertions enabled. Private source, manuals, engineering evidence and replay
+`play.html` contains simulator/replay version 13, built with Zig 0.15.2 in stripped
+ReleaseSafe mode, with fixed 320 KiB Wasm memory and assertions enabled.
+Private source, manuals, engineering evidence and replay
 archives stay private; publish only this page and the reviewed compiled assets.
 
 Walls hide actors; explored terrain stays grey when it leaves view. Choose an
