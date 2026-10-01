@@ -663,14 +663,19 @@ function showAim(){
   $('pad-confirm').disabled=$('aim-confirm').disabled;
   $('quick-aim-title').textContent=verbNames[verb]+' · flechas para apuntar';
   $('quick-aim-detail').textContent=reason===ABI.preview_reason.ready?
-    (pushCount>1?`${pushCount} enemigos → 1 casilla · cancela todos${api.aim_field(A.push_end_spikes)?' · pinchos al final':''}`:
+    (throwing||verb===ABI.verb.shove?aimConsequence(verb,reason,true):
       $('aim-target').textContent+' · '+$('aim-cost').textContent):(previewReasons[reason]??'Objetivo no disponible.');
 }
-function aimConsequence(verb,reason){
+function aimConsequence(verb,reason,compact=false){
   if(reason!==ABI.preview_reason.ready)return previewReasons[reason]??'Ese objetivo no está disponible.';
-  if(api.aim_field(A.unlocks_chest))return 'La llave destraba el cofre y se consume. Acercate después para abrirlo sin gastar otra llave. El cofre sigue cerrado hasta que lo abras; la llave no cae al suelo.';
-  if(api.aim_field(A.catches_metal))return `Golpe: ${api.aim_field(A.throw_damage)} de daño e interrumpe. El ladrón agarra el objeto y buscará huir en su próximo turno. Al morir lo deja en su casilla; pisala para recuperarlo.`;
+  if(api.aim_field(A.unlocks_chest))return compact?'Destraba el cofre y consume la llave. Acercate después para abrirlo.':'La llave destraba el cofre y se consume. Acercate después para abrirlo sin gastar otra llave. El cofre sigue cerrado hasta que lo abras; la llave no cae al suelo.';
+  if(api.aim_field(A.catches_metal))return compact?`${api.aim_field(A.throw_damage)} daño · interrumpe. El ladrón atrapa el objeto y puede huir.`:`Golpe: ${api.aim_field(A.throw_damage)} de daño e interrumpe. El ladrón agarra el objeto y buscará huir en su próximo turno. Al morir lo deja en su casilla; pisala para recuperarlo.`;
   if(isThrow(verb)){
+    if(compact){
+      const hit=api.aim_field(A.throw_hits_enemy)?`${api.aim_field(A.throw_damage)} daño · ${api.aim_field(A.interrupts)?'interrumpe':'su ataque sigue'}`:'Sin enemigo golpeado';
+      return verb===ABI.verb.throw_potion?`${hit}. Se rompe y moja; no te cura.`:
+        `${hit}. ${verb===ABI.verb.throw_key?'Llave':'Moneda'} recuperable al pisarla.`;
+    }
     const hit=api.aim_field(A.interrupts)?`Golpe: ${api.aim_field(A.throw_damage)} de daño directo e interrumpe el ataque enemigo.`:
       api.aim_field(A.throw_hits_enemy)?'El blob absorbe el metal: 0 de daño. No lo interrumpe; su ataque sigue.':
       `Caída sin enemigo golpeado: ${api.aim_field(A.throw_damage)} de daño directo.`;
@@ -678,9 +683,10 @@ function aimConsequence(verb,reason){
       `Queda ${verb===ABI.verb.throw_key?'una K':'una G'} subrayada en el suelo. Caminá sobre ella para recuperarla si tenés espacio en el inventario.`;
     return `${hit} ${effect}`;
   }
-  if(verb===ABI.verb.shove&&api.aim_field(A.impact_damage))return `Choque del empujón: ${api.aim_field(A.impact_damage)} de daño al enemigo. No se desplaza; cancela su ataque.`;
-  if(verb===ABI.verb.shove&&api.aim_field(A.push_count)>1)return `Cadena: ${api.aim_field(A.push_count)} enemigos avanzan una casilla; cancela todos sus ataques. Cada uno recibe el efecto del terreno donde cae.${api.aim_field(A.push_end_spikes)?' El último cae en pinchos: 1 de daño.':''}`;
-  if(verb===ABI.verb.shove&&api.aim_field(A.destination_spikes))return 'Pinchos: 1 de daño al entrar. Cancela el ataque.';
+  if(verb===ABI.verb.shove&&api.aim_field(A.impact_damage))return compact?`Choque: ${api.aim_field(A.impact_damage)} daño. No se mueve; interrumpe.`:`Choque del empujón: ${api.aim_field(A.impact_damage)} de daño al enemigo. No se desplaza; cancela su ataque.`;
+  if(verb===ABI.verb.shove&&api.aim_field(A.push_count)>1)return compact?`${api.aim_field(A.push_count)} enemigos → 1 casilla · interrumpe a todos${api.aim_field(A.push_end_spikes)?' · pinchos al final':''}`:`Cadena: ${api.aim_field(A.push_count)} enemigos avanzan una casilla; cancela todos sus ataques. Cada uno recibe el efecto del terreno donde cae.${api.aim_field(A.push_end_spikes)?' El último cae en pinchos: 1 de daño.':''}`;
+  if(verb===ABI.verb.shove&&api.aim_field(A.destination_spikes))return compact?'Empuja a pinchos · interrumpe.':'Pinchos: 1 de daño al entrar. Cancela el ataque.';
+  if(verb===ABI.verb.shove&&compact)return 'Desplaza 1 casilla · interrumpe.';
   return previewReasons[reason];
 }
 function applyAim(){
