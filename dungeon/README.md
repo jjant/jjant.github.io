@@ -8,7 +8,12 @@ expedition. The static landing page uses no external fonts or telemetry.
 and assertions enabled. Private source, manuals, engineering evidence and replay
 archives stay private; publish only this page and the reviewed compiled assets.
 
-Rules v12 build on fire, water, spikes, shoves and recoverable metal throws:
+Walls hide actors; explored terrain stays grey when it leaves view. Choose an
+action, aim at highlighted cells with the arrow keys, then confirm. Aiming and
+canceling don’t spend a turn. Turns animate in order: player → enemy → environment.
+New input skips the visuals.
+
+The rules build on fire, water, spikes, shoves and recoverable metal throws:
 
 * Throw a key into a locked chest to unlock it. The key is consumed; bump into
   the chest later to open it and collect its treasure once.
@@ -32,9 +37,10 @@ a replay library, seeking and taking control are future work.
 
 The handheld and action drawings are illustrations, not gameplay captures.
 The combination sequence uses inline SVG and readable ordered steps; it introduces
-no image assets. The PNGs below show the rules v12 eight-floor campaign, reached
-through ordinary play by the built-in explorer with seed 42 and simulated faults
-off. Both show a living guardian preparing its attack:
+no image assets. The PNGs below predate wall visibility and ordered turn animation;
+replacement captures are pending. They show the rules v12 eight-floor campaign,
+reached through ordinary play by the built-in explorer with seed 42 and simulated
+faults off. Both show a living guardian preparing its attack:
 
 | Asset | Scene |
 | --- | --- |
