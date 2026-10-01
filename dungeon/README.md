@@ -4,11 +4,17 @@ Public route: https://jjant.github.io/dungeon/. A browser roguelike prototype wi
 eight authored floors of rooms and corridors, two guardians, and time to think
 between turns. Start at the title screen; victory and defeat menus offer another
 expedition. The static landing page uses no external fonts or telemetry.
-`play.html` contains the stripped ReleaseSafe Zig/Wasm game, with fixed memory
-and assertions enabled. Private source, manuals, engineering evidence and replay
+`play.html` contains simulator/replay version 13, built with Zig 0.15.2 in stripped
+ReleaseSafe mode, with fixed 320 KiB Wasm memory and assertions enabled.
+Private source, manuals, engineering evidence and replay
 archives stay private; publish only this page and the reviewed compiled assets.
 
-Rules v12 build on fire, water, spikes, shoves and recoverable metal throws:
+Walls hide actors; explored terrain stays grey when it leaves view. Choose an
+action, aim at highlighted cells with the arrow keys, then confirm. Aiming and
+canceling don’t spend a turn. Turns animate in order: player → enemy → environment.
+New input skips the visuals.
+
+The rules build on fire, water, spikes, shoves and recoverable metal throws:
 
 * Throw a key into a locked chest to unlock it. The key is consumed; bump into
   the chest later to open it and collect its treasure once.
@@ -32,9 +38,10 @@ a replay library, seeking and taking control are future work.
 
 The handheld and action drawings are illustrations, not gameplay captures.
 The combination sequence uses inline SVG and readable ordered steps; it introduces
-no image assets. The PNGs below show the rules v12 eight-floor campaign, reached
-through ordinary play by the built-in explorer with seed 42 and simulated faults
-off. Both show a living guardian preparing its attack:
+no image assets. The PNGs below show the version 13 eight-floor campaign with wall
+visibility, reached by the built-in explorer with seed 42 and simulated faults off.
+Both show a living, visible guardian preparing its attack after the turn's save
+has completed. Reduced motion is enabled for stable stills:
 
 | Asset | Scene |
 | --- | --- |
