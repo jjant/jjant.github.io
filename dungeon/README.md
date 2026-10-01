@@ -14,7 +14,11 @@ Confirmed loot labels linger across quick moves; reduced motion keeps the text
 still and returns to idle after it expires. The explorer walks between tiles;
 hits tint the player and fragment the lost HP segment in cause order. Fresh
 launches choose a random seed. New inputs always skip attack motion.
+Title and end choices live inside the game; browser controls retain accessible
+equivalents without a duplicate visible menu. Guardian seals visibly block
+stairs until defeated, distinct from the keys used for chests.
 The Laboratory button changes the view without restarting or enabling faults;
+its optional two-room trials stay out of the normal title menu.
 `#lab` initially starts the bot with simulated power cuts. Fullscreen depends on
 the browser. Runs live in the tab: export a replay before closing it. Replays need
 matching engine/content versions.
