@@ -12,8 +12,10 @@ The camera retains the full throwing reach; “Vista completa” restores the fu
 board without changing the run. Landscape puts controls beside the board.
 Confirmed loot labels linger at fixed locations across quick moves; reduced
 motion keeps the text still and returns to idle after it expires. The explorer
-walks between tiles;
-hits tint the player and fragment the lost HP segment in cause order. Fresh
+walks between tiles; close attacks move the whole attacker toward its recorded
+target. Hits tint the player and fragment the lost HP segment in cause order. Keys and
+coins keep their silhouette and size when thrown onto an unobstructed floor.
+Fresh
 launches choose a random seed. New inputs always skip attack motion.
 Title and end choices live inside the game; browser controls retain accessible
 equivalents without a duplicate visible menu. Guardian seals visibly block
