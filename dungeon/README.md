@@ -24,7 +24,9 @@ A first input or scene tap skips to the result; a separate gesture can retry.
 Holding a pointer while the menu appears cannot activate a new choice on release.
 Coal lights dry reeds when it moves onto them, including forced movement. The
 shove preview marks those landings; water can redirect Coal or stop fire spread.
-This changes the rules to replay engine 27; older replays need their matching build.
+Rammers cut through dry reeds. Sentries can shove through a movable row of allies;
+sidestepping can redirect that row into terrain. Current replay engine: 29;
+older replays need their matching build.
 The Laboratory button changes the view without restarting or enabling faults;
 its optional two-room trials stay out of the normal title menu.
 “Próxima partida” can select experimental seeded rooms and corridors. New Run
