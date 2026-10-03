@@ -22,6 +22,9 @@ Death finishes the fatal hit, plays a short fall, then enlarges the actual scene
 with its cause and the result choices. It preserves fog and the exact run.
 A first input or scene tap skips to the result; a separate gesture can retry.
 Holding a pointer while the menu appears cannot activate a new choice on release.
+Coal lights dry reeds when it moves onto them, including forced movement. The
+shove preview marks those landings; water can redirect Coal or stop fire spread.
+This changes the rules to replay engine 27; older replays need their matching build.
 The Laboratory button changes the view without restarting or enabling faults;
 its optional two-room trials stay out of the normal title menu.
 `#lab` initially starts the bot with simulated power cuts. Fullscreen depends on
