@@ -27,6 +27,10 @@ shove preview marks those landings; water can redirect Coal or stop fire spread.
 This changes the rules to replay engine 27; older replays need their matching build.
 The Laboratory button changes the view without restarting or enabling faults;
 its optional two-room trials stay out of the normal title menu.
+“Próxima partida” can select experimental seeded rooms and corridors. New Run
+prepares a new map; Continue, Retry and replay seeking preserve the current one.
+“Guardar mapa” downloads its exact `.dngp`: keep it beside the replay and load
+the map before opening that replay. The authored campaign remains the default.
 `#lab` initially starts the bot with simulated power cuts. Fullscreen depends on
 the browser. Runs live in the tab: export a replay before closing it. Replays need
 matching engine/content versions.
