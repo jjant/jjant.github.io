@@ -6,7 +6,8 @@ No iframe, external font, telemetry or account. `about.html` is the illustrated
 field guide; `play.html` redirects old links and preserves `#lab`.
 
 Arrows move/aim; Z opens the inventory or goes back, X confirms a selection. A potion aimed
-at yourself heals; another target throws it. New runs generate eight floors.
+at yourself heals; another target throws it. New runs generate eight floors, with
+narrow passages and occasional galleries around pillars that provide room to flank.
 Continue/Retry keeps the exact map. Unsaved runs live in the tab: in Laboratory, export
 both the replay and its map for a portable backup. The Laboratory library retains
 up to eight named recordings on this device; browser storage can be cleared.
