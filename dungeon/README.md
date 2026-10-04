@@ -5,7 +5,7 @@ ReleaseSafe Zig/Wasm build, with fixed 320 KiB memory and assertions enabled.
 No iframe, external font, telemetry or account. `about.html` is the illustrated
 field guide; `play.html` redirects old links and preserves `#lab`.
 
-Arrows move/aim; X opens the inventory or confirms, Z cancels. A potion aimed
+Arrows move/aim; Z opens the inventory or goes back, X confirms a selection. A potion aimed
 at yourself heals; another target throws it. New runs generate eight floors.
 Continue/Retry keeps the exact map. Unsaved runs live in the tab: in Laboratory, export
 both the replay and its map for a portable backup. The Laboratory library retains
