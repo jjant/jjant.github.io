@@ -7,8 +7,11 @@ field guide; `play.html` redirects old links and preserves `#lab`.
 
 Arrows move/aim; X opens the inventory or confirms, Z cancels. A potion aimed
 at yourself heals; another target throws it. New runs generate eight floors.
-Continue/Retry keeps the exact map. Runs live in the tab: in Laboratory, export
-both the replay and its map before closing. Replays require their matching build.
+Continue/Retry keeps the exact map. Unsaved runs live in the tab: in Laboratory, export
+both the replay and its map for a portable backup. The Laboratory library retains
+up to eight named recordings on this device; browser storage can be cleared.
+Replays require their matching build. Beside stairs on floors 2/5, SUPPLY buys a
+potion for 25 carried gold and descends; walking onto the stairs remains free.
 
 The game owns title, inventory and result screens. Phones retain the full board
 and a cross-shaped gamepad with X/Z. Reduced motion keeps useful static feedback.
