@@ -11,6 +11,8 @@ narrow passages and occasional galleries around pillars that provide room to fla
 Continue/Retry keeps the exact map. Unsaved runs live in the tab: in Laboratory, export
 both the replay and its map for a portable backup. The Laboratory library retains
 up to eight named recordings on this device; browser storage can be cleared.
+Manual and bot replays can be inspected backward/forward and resumed from a saved
+boundary with different decisions; the new recording keeps its parent and prefix.
 Replays require their matching build. Beside stairs on floors 2/5, SUPPLY buys a
 potion for 25 carried gold and descends; walking onto the stairs remains free.
 
