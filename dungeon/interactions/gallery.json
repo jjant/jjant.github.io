@@ -1,5 +1,5 @@
 {
-  "description_es": "Tres secuencias del motor real en escenas preparadas. Cada clip vuelve al inicio al repetirse.",
+  "description_es": "Cuatro secuencias del motor real en escenas preparadas. Cada clip vuelve al inicio al repetirse.",
   "clips": [
     {
       "id": "rammer-agua",
@@ -63,6 +63,27 @@
       "loop": true,
       "muted": true,
       "playsinline": true
+    },
+    {
+      "id": "llave-devuelta",
+      "title_es": "Una llave de ida y vuelta",
+      "caption_es": "El ladrón acorralado devuelve tu llave. Rammer la intercepta, pierde 1 vida y deja la llave recuperable en el suelo.",
+      "content_label_es": "Mod de ejemplo",
+      "video": "llave-devuelta/clip.mp4",
+      "poster": "llave-devuelta/poster.png",
+      "duration_seconds": 3.38,
+      "width": 960,
+      "height": 720,
+      "fps": 50,
+      "codec": "h264",
+      "pixel_format": "yuv420p",
+      "loop": true,
+      "muted": true,
+      "playsinline": true,
+      "video_bytes": 25268,
+      "video_sha256": "5b38536e53be34345466f8724e631ab09719657a1e4e252669069dd22b061c69",
+      "poster_bytes": 4325,
+      "poster_sha256": "159d615e23dd0e4f0c5e1dc3cb308e6b5b5a374c11902106b605bacf1482fccf"
     }
   ]
 }
