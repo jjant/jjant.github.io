@@ -1,5 +1,5 @@
 {
-  "description_es": "Cinco secuencias del motor real en escenas preparadas. Cada clip vuelve al inicio al repetirse.",
+  "description_es": "Seis secuencias del motor real en escenas preparadas. Cada clip vuelve al inicio al repetirse.",
   "clips": [
     {
       "id": "rammer-agua",
@@ -102,6 +102,27 @@
       "video_sha256": "3a750ae65977ee94218bcf7feb33296b303b7414f9d45a2719609238ba8fe9ae",
       "poster_bytes": 7963,
       "poster_sha256": "cb3da4b9ab53527caa01c20d1688b4a00ae95bf3286fcd9dde5529e6ec2cf4b2",
+      "loop": true,
+      "muted": true,
+      "playsinline": true
+    },
+    {
+      "id": "pocion-cruz",
+      "title_es": "Mojado, pero no frenado",
+      "caption_es": "El vidrio interrumpe al Coal guardián. El agua moja el impacto y las cuatro casillas vecinas: el otro Coal pierde 1 HP, sobrevive y avanza.",
+      "content_label_es": "Mod de demostración · ritmo normal",
+      "video": "pocion-cruz/clip.mp4",
+      "poster": "pocion-cruz/poster.png",
+      "duration_seconds": 6.466666666666667,
+      "width": 960,
+      "height": 720,
+      "fps": 30,
+      "codec": "h264",
+      "pixel_format": "yuv420p",
+      "video_bytes": 101755,
+      "video_sha256": "7cee7f8963bbe65983b86100a37761e2ea2edaf7db6f7474ed4dfe2ca8be0788",
+      "poster_bytes": 19014,
+      "poster_sha256": "8b9028e83fa9dc6c078536210dba169c2dce7952b82d2586bf3714567732df9f",
       "loop": true,
       "muted": true,
       "playsinline": true
