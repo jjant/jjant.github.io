@@ -2,6 +2,27 @@
   "description_es": "Secuencias del motor real en escenas preparadas y pisos generados. Cada clip vuelve al inicio al repetirse.",
   "clips": [
     {
+      "id": "rammer-vidrio",
+      "title_es": "Vidrio contra la carga",
+      "caption_es": "Lanzás una poción al suelo y te apartás. Rammer cruza el vidrio y pierde 1 HP; dos golpes lo rematan. +2 monedas, 9 HP y 1 poción al final.",
+      "content_label_es": "Mod de demostración · una poción gastada · ritmo normal",
+      "video": "rammer-vidrio/clip.mp4",
+      "poster": "rammer-vidrio/poster.png",
+      "duration_seconds": 6.833333,
+      "width": 960,
+      "height": 720,
+      "fps": 30,
+      "codec": "h264",
+      "pixel_format": "yuv420p",
+      "video_bytes": 151343,
+      "poster_bytes": 6364,
+      "video_sha256": "d4812b92a03c44ab2c0304118a631c298b6d881bee23ea6bb17aa1db824da5c9",
+      "poster_sha256": "a578de475872882a0b3e960b3cb92a83bc13b66d663e18c3fdf3ca253cfd76b7",
+      "loop": true,
+      "muted": true,
+      "playsinline": true
+    },
+    {
       "id": "rammer-agua",
       "title_es": "La carga también salpica",
       "caption_es": "Una llave debilita a Coal. Apartarte deja que siga tu rastro: Rammer atraviesa el charco y lo apaga. +2 monedas, sin perder vida.",
