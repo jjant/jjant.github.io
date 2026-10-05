@@ -1,5 +1,5 @@
 {
-  "description_es": "Siete secuencias del motor real en escenas preparadas. Cada clip vuelve al inicio al repetirse.",
+  "description_es": "Ocho secuencias del motor real en escenas preparadas. Cada clip vuelve al inicio al repetirse.",
   "clips": [
     {
       "id": "rammer-agua",
@@ -144,6 +144,27 @@
       "video_sha256": "7df8cd90304c40ff346de26538a7ba9ee30736edaa0be9ebb77f51d4257f0491",
       "poster_bytes": 17237,
       "poster_sha256": "a8fc4c900b469e93f23eb4c059872b0723798ed62b6b2f65c982ecf4a6289ef7",
+      "loop": true,
+      "muted": true,
+      "playsinline": true
+    },
+    {
+      "id": "botella-cruzada",
+      "title_es": "Que se crucen entre ellos",
+      "caption_es": "Desbloqueás el cofre con una llave y dejás que el ladrón robe la poción. Esperás a que lance: Coal intercepta la botella y el vidrio con el agua lo apagan. Conservás tus 9 HP y tus dos pociones.",
+      "content_label_es": "Mod de demostración · ritmo normal",
+      "video": "botella-cruzada/clip.mp4",
+      "poster": "botella-cruzada/poster.png",
+      "duration_seconds": 9.233333333333333,
+      "width": 960,
+      "height": 720,
+      "fps": 30,
+      "codec": "h264",
+      "pixel_format": "yuv420p",
+      "video_bytes": 182129,
+      "video_sha256": "a849ed6fefe17353f0f194bba5fb723c5d3e53af1d16168f235ba0fc26ac08fe",
+      "poster_bytes": 16223,
+      "poster_sha256": "e0b6f6cfb413f9470c0a2998ea57f5342cf2f6d9f3e6c12b5ca6d8112efdbf85",
       "loop": true,
       "muted": true,
       "playsinline": true
