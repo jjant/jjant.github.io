@@ -24,10 +24,19 @@ Fresh input skips movement/attack/stair motion. The public gallery below the gam
 contains real engine clips in disclosed, authored encounters. Videos play only
 on request and pause when hidden; reduced motion disables looping.
 
-Publish the generated `zig build web -Dstrip-web=true` artifact after relevant
-browser tests and visual review. Preserve `interactions/`: its MP4s, posters and
-`gallery.json` are intentional public assets; raw witnesses, source and replays
-stay private. The template reveals this section only on jjant.github.io.
+From the game source checkout, update this page with:
+
+```sh
+zig build site-export -Dstrip-web=true -j1 -- \
+  PATH_TO_THIS_SITE/dungeon/index.html PATH_TO_THIS_SITE/dungeon/index.html
+```
+
+The exporter replaces the complete game script together with its ABI and Wasm,
+preserving the public shell and gallery. Review the diff and browser behavior
+before publishing; it does not verify the audience or privacy of other assets.
+Preserve `interactions/`: its MP4s, posters and `gallery.json` are intentional
+public assets; raw witnesses, source and replays stay private. The template
+reveals this section only on jjant.github.io.
 Validate narrow portrait/landscape, keyboard/touch, gallery playback, Laboratory
 and replay import/export. Browser emulation does not establish physical mobile
 or hardware performance. Publication PRs record source and validation.
