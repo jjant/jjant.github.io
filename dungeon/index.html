@@ -192,10 +192,10 @@ main{max-width:1200px;padding:16px 24px 48px}.intro{align-items:center;gap:28px;
 <li><strong>Chispa:</strong> prende los juncos secos. El terreno mojado corta el avance del fuego.</li>
 <li><strong>Rociar:</strong> apunta sobre vos o hasta tres casillas. Tenés tres cargas de agua por piso; se recargan al bajar por la escalera.</li>
 <li><strong>Enemigo dorado, de carbón:</strong> es inmune al fuego; el agua le hace daño.</li>
-<li><strong>Empujar:</strong> mueve al enemigo una casilla y cancela su ataque. Si una obstrucción bloquea el destino, hace 2 de daño sin moverlo. Entrar en pinchos hace 1; mojarlos no los desactiva.</li>
+<li><strong>Empujar:</strong> desplaza una casilla la fila de enemigos y cancela sus ataques. Si el destino está bloqueado, hace 2 de daño sólo al primero, sin moverlo ni interrumpirlo: si sobrevive, puede actuar. Entrar en pinchos hace 1; mojarlos no los desactiva.</li>
 <li><strong>Tirar inventario:</strong> elegí una llave, moneda o poción de curación, una casilla marcada de una a tres casillas de distancia. La vista previa marca la caída o el golpe real; un enemigo, pared, cofre o escalera puede acortar el tiro.</li>
-<li><strong>Botín recuperable:</strong> en el suelo, K/G/B con subrayado verde indican llave, moneda y bolsa de 5 monedas. Pisá el botín para recuperarlo si tenés espacio. Los objetos que llevan los ladrones o se mueven al barrerlos usan iconos. El límite es de cuatro objetos entre el suelo y los ladrones; si se llena, recuperá alguno antes de tirar más metal.</li>
-<li><strong>Vidrio:</strong> una poción de curación se rompe al caer: moja y apaga esa casilla, y el agua puede dañar al carbón. Esa poción ya no sirve para curarte.</li>
+<li><strong>Botín recuperable:</strong> llaves, monedas, bolsas y botellas intactas conservan sus iconos al caer al suelo. Pisá el botín para recuperarlo si tenés espacio. Una bolsa vale 5 monedas. Hay cuatro lugares compartidos entre el suelo y los ladrones; si se llenan, recuperá algún objeto antes de tirar más metal.</li>
+<li><strong>Vidrio:</strong> una poción lanzada se rompe: moja y apaga el impacto y sus cuatro vecinas abiertas. El agua puede dañar al carbón; sólo el golpe directo interrumpe. No te cura.</li>
 </ul></details>
 </section>
 </section>
@@ -938,8 +938,8 @@ function aimConsequence(verb,reason,compact=false){
     const hit=api.aim_field(A.interrupts)?`Golpe: ${api.aim_field(A.throw_damage)} de daño directo e interrumpe el ataque enemigo.`:
       api.aim_field(A.throw_hits_enemy)?'El blob absorbe el metal: 0 de daño. No lo interrumpe; su ataque sigue.':
       `Caída sin enemigo golpeado: ${api.aim_field(A.throw_damage)} de daño directo.`;
-    const effect=verb===ABI.verb.throw_potion?'La poción de curación se rompe: moja y apaga la casilla de impacto. El agua puede dañar al carbón. No te cura.':
-      `Queda ${verb===ABI.verb.throw_key?'una K':'una G'} subrayada en el suelo. Caminá sobre ella para recuperarla si tenés espacio en el inventario.`;
+    const effect=verb===ABI.verb.throw_potion?'La poción se rompe: moja y apaga el impacto y sus cuatro vecinas abiertas. El agua puede dañar al carbón; sólo el golpe directo interrumpe. No te cura.':
+      `Queda ${verb===ABI.verb.throw_key?'una llave':'una moneda'} en el suelo. Caminá sobre ella para recuperarla si tenés espacio en el inventario.`;
     return `${hit} ${effect}`;
   }
   if(verb===ABI.verb.shove&&api.aim_field(A.impact_damage))return compact?`Choque: ${api.aim_field(A.impact_damage)} daño. No se mueve; si sobrevive, puede actuar.`:`Choque del empujón: ${api.aim_field(A.impact_damage)} de daño al enemigo. No se desplaza ni interrumpe: si sobrevive, puede actuar.`;
