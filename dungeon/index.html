@@ -314,6 +314,9 @@ const previewReasons = {
   [ABI.preview_reason.pack_full]:'La mochila está llena de pociones.',
 };
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+// Keep event delivery separate from frame/input polling: reading .matches can
+// consume Chromium's pending change before this query's listeners see it.
+const motionEvents = matchMedia(reducedMotion.media);
 const frameInterval = 1000 / 30;
 let api, wasmModule, running = false, seed = 0, faults = 0, manual = 1, replaying = false;
 let endTick = null, seekTarget = null, accumulator = 0, previous = 0, lastTrace = '';
@@ -474,7 +477,7 @@ if(location.hostname==='jjant.github.io'){
     clip.poster=clip.dataset.poster;clip.src=clip.dataset.source;
     clip.loop=!reducedMotion.matches;visibility.observe(clip);
   }
-  reducedMotion.addEventListener('change',()=>{for(const clip of clips)clip.loop=!reducedMotion.matches;});
+  motionEvents.addEventListener('change',event=>{for(const clip of clips)clip.loop=!event.matches;});
   document.addEventListener('visibilitychange',()=>{if(document.hidden)for(const clip of clips)clip.pause();});
 }
 function packId(engine=api){return Array.from({length:ABI.limits.pack_identity_bytes},(_,i)=>engine.pack_byte(i).toString(16).padStart(2,'0')).join('');}
@@ -856,7 +859,7 @@ function onFrameImpl(now){
   // Reduced motion settles completely once its bounded receipts expire.
   if(seekTarget!==null||!reducedMotion.matches||frameDirty||api.receipts_active()||(running&&(!isManual()||manualWorkPending())))requestFrame();
 }
-reducedMotion.addEventListener('change',invalidateFrame);
+motionEvents.addEventListener('change',invalidateFrame);
 $('turn-motion').onchange=invalidateFrame;
 function canSubmit(){
   if(inventoryOpen())return false;
