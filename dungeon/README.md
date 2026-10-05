@@ -22,7 +22,7 @@ The game owns title, inventory and result screens. Phones retain the full board
 and a cross-shaped gamepad with X/Z. Reduced motion keeps useful static feedback.
 Movement, attacks and stair transitions finish before queued gameplay input runs.
 The public gallery below the game
-contains real engine clips in disclosed, authored encounters. Videos play only
+contains real engine clips in disclosed, authored and generated encounters. Videos play only
 on request and pause when hidden; reduced motion disables looping.
 
 From the game source checkout, update this page with:

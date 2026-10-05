@@ -1,5 +1,5 @@
 {
-  "description_es": "Ocho secuencias del motor real en escenas preparadas. Cada clip vuelve al inicio al repetirse.",
+  "description_es": "Secuencias del motor real en escenas preparadas y pisos generados. Cada clip vuelve al inicio al repetirse.",
   "clips": [
     {
       "id": "rammer-agua",
@@ -168,6 +168,48 @@
       "loop": true,
       "muted": true,
       "playsinline": true
+    },
+    {
+      "id": "oro-cortafuegos",
+      "title_es": "Oro tras el cortafuegos",
+      "caption_es": "Con ambos ataques anunciados, bajás al oro: Rammer corta los juncos antes de la chispa de Coal. +3 monedas; ambos siguen vivos. La esquiva no cuesta vida, agua ni pociones; el recorrido previo sí costó 1 vida.",
+      "content_label_es": "Sala del quinto piso · mapa generado · ritmo normal",
+      "video": "oro-cortafuegos/clip.mp4",
+      "poster": "oro-cortafuegos/poster.png",
+      "duration_seconds": 10.033333,
+      "width": 960,
+      "height": 720,
+      "fps": 30,
+      "codec": "h264",
+      "pixel_format": "yuv420p",
+      "video_bytes": 107782,
+      "poster_bytes": 6679,
+      "video_sha256": "130edf665083ea342651f6681c30f550650f9b8f0c6ac1131ed599433e1164ae",
+      "poster_sha256": "09a0c41fe29b0d6812b84bb66f7333d263be2839175fc9920be7978bee0d46a9",
+      "loop": true,
+      "muted": true,
+      "playsinline": true
+    },
+    {
+      "id": "enemigo-escudo",
+      "title_es": "Un enemigo también puede cubrirte",
+      "caption_es": "El Sentry herido cae de un golpe y Coal intercepta la botella del ladrón: conservás vida y poción. Si usás la poción para matar primero a Coal, abrís el tiro: botella y choque contra la pared te cuestan 3 HP.",
+      "content_label_es": "Misma situación del sexto piso · dos desenlaces · ritmo normal",
+      "video": "enemigo-escudo/clip.mp4",
+      "poster": "enemigo-escudo/poster.png",
+      "duration_seconds": 23.433333,
+      "width": 960,
+      "height": 720,
+      "fps": 30,
+      "codec": "h264",
+      "pixel_format": "yuv420p",
+      "loop": true,
+      "muted": true,
+      "playsinline": true,
+      "video_bytes": 300741,
+      "video_sha256": "8a2e4d5a9dde1a59d639ec8bfd6541083b807ab2bc83c65314aa7fd5034f4ba8",
+      "poster_bytes": 6092,
+      "poster_sha256": "680167e38bdb59ba80137ef03a2fa30f743843e98fd836d556f28ab7e7986753"
     }
   ]
 }
