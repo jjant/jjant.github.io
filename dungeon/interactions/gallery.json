@@ -2,6 +2,28 @@
   "description_es": "Secuencias del motor real en escenas preparadas y pisos generados. Cada clip vuelve al inicio al repetirse.",
   "clips": [
     {
+      "id": "pocion-fragil",
+      "title_es": "La cura también puede romperse",
+      "caption_es": "Un empujón contra la pared rompe la poción robada y moja a Coal: esa botella ya no se recupera. Si avanzás sobre los restos, el vidrio te quita 1 HP y Coal todavía te golpea por otro antes de morir por el agua.",
+      "content_label_es": "Escena preparada · ritmo normal",
+      "video": "pocion-fragil/clip.mp4",
+      "poster": "pocion-fragil/poster.png",
+      "duration_seconds": 6.883333,
+      "width": 960,
+      "height": 720,
+      "fps": 25.13317191283293,
+      "codec": "h264",
+      "pixel_format": "yuv420p",
+      "loop": true,
+      "muted": true,
+      "playsinline": true,
+      "video_bytes": 175279,
+      "video_sha256": "ab332e611100858ba4b9a321cafb30b88c9162f86b13180874bdbca565292710",
+      "poster_bytes": 69332,
+      "poster_sha256": "d74f074b5b380bae2d1572f794fa9035d3d4824710aeddf656bd730a7b5a381c",
+      "fps_mode": "variable"
+    },
+    {
       "id": "rammer-vidrio",
       "title_es": "Vidrio contra la carga",
       "caption_es": "Lanzás una poción al suelo y te apartás. Rammer cruza el vidrio y pierde 1 HP; dos golpes lo rematan. +2 monedas, 9 HP y 1 poción al final.",
