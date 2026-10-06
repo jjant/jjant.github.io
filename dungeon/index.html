@@ -706,8 +706,7 @@ function paintEnemies(){
     enemyText(row.phase,held&&phase===ABI.intent_phase.ready?'Con botín':(enemyPhases[phase]??'Fase desconocida'));
     enemyText(row.intent,phase===ABI.intent_phase.windup?warningText(index,intent):
       phase===ABI.intent_phase.recover?'Descansa una acción válida.':
-      held===ABI.drop_kind.key?'Busca cerraduras o huye; acorralado, anuncia un tiro con su llave.':
-      held?'Busca alejarse; si queda encerrado, espera.':'Sin objetivo fijado.');
+      'Sin ataque anunciado.');
   }
   enemyText($('enemy-count'),`· ${visible} a la vista`);
   enemyText($('enemy-alert'),preparing?`X · ${preparing} preparando ataque`:'');
