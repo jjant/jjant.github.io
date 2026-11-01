@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1720" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Guía Jazz">
+<meta name="robots" content="noindex">
+<title>Guía de compra · Honda Jazz 1.3 CVT 2016</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232a5db0'/%3E%3Cpath d='M12 40h40l-4-10-8-6H24l-8 6z' fill='%23fff'/%3E%3Ccircle cx='22' cy='42' r='5' fill='%23111'/%3E%3Ccircle cx='42' cy='42' r='5' fill='%23111'/%3E%3C/svg%3E">
+<style>
+:root{
+  color-scheme: light dark;
+  --bg:#f6f5f1; --surface:#ffffff; --surface-2:#f0efec; --line:#e2e0da;
+  --text:#0b0b0b; --text-2:#52514e; --text-3:#7a7974;
+  --accent:#2a78d6; --accent-ink:#1c5cab; --accent-soft:#e7f0fc;
+  --good:#0ca30c; --good-ink:#006300; --warn:#fab219; --warn-ink:#8a5a00; --bad:#d03b3b;
+  --car:#2a5db0;
+  --radius:18px; --shadow:0 1px 2px rgba(0,0,0,.05),0 8px 24px rgba(0,0,0,.06);
+  --safe-top:env(safe-area-inset-top); --safe-bottom:env(safe-area-inset-bottom);
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1114; --surface:#1a1a19; --surface-2:#232321; --line:#30302d;
+    --text:#f0efec; --text-2:#c3c2b7; --text-3:#8f8e86;
+    --accent:#3987e5; --accent-ink:#86b6ef; --accent-soft:#16253a;
+    --good-ink:#5fd35f; --warn-ink:#fab219;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:calc(64px + var(--safe-top))}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 var(--font);-webkit-tap-highlight-color:transparent;padding-bottom:calc(24px + var(--safe-bottom))}
+a{color:var(--accent-ink)}
+button{font:inherit;color:inherit}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+h1,h2,h3{line-height:1.15;letter-spacing:-.01em;margin:0}
+h2{font-size:26px;margin-bottom:6px}
+h3{font-size:18px}
+p{margin:.5em 0}
+small,.muted{color:var(--text-2)}
+.eyebrow{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-ink)}
+
+/* nav */
+.topbar{position:sticky;top:0;z-index:20;padding-top:var(--safe-top);background:color-mix(in srgb,var(--bg) 82%,transparent);-webkit-backdrop-filter:saturate(1.6) blur(18px);backdrop-filter:saturate(1.6) blur(18px);border-bottom:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
+.topbar .wrap{display:flex;align-items:center;gap:10px;height:56px}
+.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;flex:1;mask-image:linear-gradient(90deg,#000 88%,transparent)}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;padding:7px 12px;border-radius:999px;font-size:14px;font-weight:500;color:var(--text-2);text-decoration:none;background:transparent;white-space:nowrap}
+.chip.is-on{background:var(--text);color:var(--bg)}
+.progress-pill{flex:none;display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--text-2)}
+.ring{width:22px;height:22px}
+.ring circle{fill:none;stroke-width:3}
+.ring .track{stroke:var(--line)}
+.ring .val{stroke:var(--good);stroke-linecap:round;transform:rotate(-90deg);transform-origin:50% 50%;transition:stroke-dashoffset .4s}
+
+/* sections */
+section{padding:34px 0 8px}
+.card{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+.stack>*+*{margin-top:12px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (min-width:640px){.grid4{grid-template-columns:repeat(4,1fr)}}
+
+/* hero */
+.hero{padding-top:18px}
+.hero h1{font-size:34px;margin:6px 0 4px}
+.hero .sub{color:var(--text-2);font-size:16px}
+.plate{display:inline-flex;align-items:center;gap:8px;margin-top:10px;background:#f6cf2a;color:#111;border-radius:6px;font:700 18px/1 "Arial Narrow",Arial,sans-serif;letter-spacing:.06em;padding:6px 10px 6px 0;overflow:hidden;box-shadow:inset 0 0 0 2px #111}
+.plate b{background:#1d3f9c;color:#fff;font:700 10px/1 var(--font);padding:9px 5px;margin:-6px 0}
+.stage{position:relative;height:270px;margin:14px -16px 0;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+@media (min-width:640px){.stage{height:380px;margin:14px 0 0}}
+.car3d-canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hotspot-layer{position:absolute;inset:0;pointer-events:none}
+.hotspot{position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;border:2px solid #fff;background:var(--accent);color:#fff;font:700 13px/26px var(--font);text-align:center;padding:0;pointer-events:auto;box-shadow:0 2px 8px rgba(0,0,0,.35);transition:opacity .2s,background .2s;cursor:pointer}
+.hotspot::after{content:"";position:absolute;inset:-9px;border-radius:50%}
+.hotspot.is-active{background:#fff;color:var(--accent-ink);border-color:var(--accent)}
+.hotspot.is-hidden{opacity:0;pointer-events:none}
+.stage-hint{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);font-size:12px;color:var(--text-3);background:color-mix(in srgb,var(--surface) 80%,transparent);padding:4px 10px;border-radius:999px;pointer-events:none;white-space:nowrap}
+.views{display:flex;gap:6px;justify-content:center;margin-top:8px;flex-wrap:wrap}
+.seg{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 13px;font-size:14px;cursor:pointer}
+.seg:active{transform:scale(.97)}
+.spot-panel{margin-top:12px;min-height:80px}
+.spotlist{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin:10px -16px 0;padding:2px 16px 4px;scroll-snap-type:x proximity}
+.spotlist::-webkit-scrollbar{display:none}
+.spotlist .seg{flex:none;scroll-snap-align:start;white-space:nowrap}
+.spotlist .seg[aria-pressed="true"]{background:var(--text);color:var(--bg);border-color:var(--text)}
+#inspeccion{position:relative;top:-8px}
+.spot-panel h3{display:flex;gap:10px;align-items:center}
+.num{flex:none;width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;font-size:13px;font-weight:700;display:inline-grid;place-items:center}
+.spot-panel ul{margin:8px 0 0;padding-left:18px}
+.spot-panel li{margin:4px 0}
+.linkbtn{background:none;border:0;color:var(--accent-ink);font-weight:600;padding:8px 0 0;cursor:pointer}
+.fallback-svg{display:none;width:100%;height:100%}
+.no-webgl .fallback-svg{display:block}
+
+.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px}
+@media (min-width:640px){.kpis{grid-template-columns:repeat(4,1fr)}}
+.kpi{background:var(--surface);border-radius:14px;padding:12px 14px;box-shadow:var(--shadow)}
+.kpi .k{font-size:12px;color:var(--text-2);text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+.kpi .v{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums;margin-top:2px}
+.kpi .n{font-size:12.5px;color:var(--text-2)}
+.actions{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:60px;border-radius:14px;background:var(--surface);box-shadow:var(--shadow);text-decoration:none;color:var(--text);font-size:13.5px;font-weight:600;border:0;cursor:pointer}
+.btn svg{width:22px;height:22px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.primary svg{stroke:#fff}
+.dealer{margin-top:12px;font-size:14.5px}
+
+/* verdict */
+.verdict{border-left:4px solid var(--good)}
+.pill{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:3px 10px;font-size:13px;font-weight:600;background:var(--surface-2)}
+.pill.good{color:var(--good-ink)}
+.pill.warn{color:var(--warn-ink)}
+.icon{width:16px;height:16px;flex:none}
+.bullets{list-style:none;padding:0;margin:10px 0 0}
+.bullets li{display:flex;gap:10px;padding:7px 0;border-top:1px solid var(--line)}
+.bullets li:first-child{border-top:0}
+.bullets .icon{margin-top:3px}
+
+/* chart */
+.chart{position:relative;margin-top:10px}
+.chart svg{display:block;width:100%;overflow:visible}
+.chart .grid line{stroke:var(--line);stroke-width:1}
+.chart .axis text{fill:var(--text-3);font-size:11px;font-variant-numeric:tabular-nums}
+.chart .series{fill:none;stroke:var(--accent);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.chart .proj{fill:none;stroke:var(--accent);stroke-width:2;stroke-dasharray:3 4;opacity:.7}
+.chart .dot{fill:var(--accent);stroke:var(--surface);stroke-width:2}
+.chart .dot.adv{fill:var(--surface);stroke:var(--accent);stroke-width:2.5}
+.chart .lbl{fill:var(--text-2);font-size:11px;font-weight:600}
+.chart .cross{stroke:var(--text-3);stroke-width:1;stroke-dasharray:2 3}
+.tip{position:absolute;pointer-events:none;background:var(--text);color:var(--bg);border-radius:10px;padding:8px 10px;font-size:12.5px;line-height:1.35;max-width:230px;box-shadow:0 6px 20px rgba(0,0,0,.25);opacity:0;transition:opacity .12s;transform:translate(-50%,calc(-100% - 12px))}
+.tip.on{opacity:1}
+.tip b{font-variant-numeric:tabular-nums}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--text-2);margin-top:6px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:10px;height:10px;border-radius:50%;display:inline-block;background:var(--accent)}
+.sw.hollow{background:var(--surface);box-shadow:inset 0 0 0 2.5px var(--accent)}
+.sw.dash{width:18px;height:0;border-radius:0;border-top:2px dashed var(--accent);background:none}
+details.table{margin-top:10px}
+details.table summary{cursor:pointer;color:var(--accent-ink);font-weight:600;font-size:14px}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
+th,td{text-align:left;padding:7px 6px;border-top:1px solid var(--line);vertical-align:top}
+th{font-size:12px;color:var(--text-2);font-weight:600}
+td.num-c{font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* timeline */
+.timeline{list-style:none;margin:12px 0 0;padding:0;position:relative}
+.timeline::before{content:"";position:absolute;left:15px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.timeline li{position:relative;padding:0 0 16px 46px}
+.timeline .step{position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--surface);box-shadow:inset 0 0 0 2px var(--accent);display:grid;place-items:center;font-weight:700;font-size:14px;color:var(--accent-ink)}
+.timeline h3{font-size:16px;padding-top:5px}
+.timeline p{margin:3px 0 0;color:var(--text-2);font-size:14.5px}
+
+/* checklists */
+.cl{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.cl+.cl{margin-top:10px}
+.cl>summary{list-style:none;display:flex;align-items:center;gap:12px;padding:15px 16px;cursor:pointer}
+.cl>summary::-webkit-details-marker{display:none}
+.cl .emoji{font-size:22px;width:28px;text-align:center}
+.cl .t{flex:1}
+.cl .t b{display:block;font-size:16px}
+.cl .t small{font-size:12.5px}
+.cl .bar{display:block;height:4px;border-radius:2px;background:var(--line);margin-top:6px;overflow:hidden}
+.cl .bar i{display:block;height:100%;width:0;background:var(--good);border-radius:2px;transition:width .3s}
+.cl .count{font-size:13px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--text-2)}
+.cl .chev{transition:transform .2s;color:var(--text-3)}
+.cl[open] .chev{transform:rotate(90deg)}
+.items{list-style:none;margin:0;padding:0 8px 8px}
+.item{display:flex;gap:12px;align-items:flex-start;padding:11px 8px;border-top:1px solid var(--line)}
+.item input{appearance:none;-webkit-appearance:none;flex:none;width:26px;height:26px;margin:0;border-radius:8px;border:2px solid var(--text-3);display:grid;place-items:center;cursor:pointer;transition:background .15s,border-color .15s}
+.item input:checked{background:var(--good);border-color:var(--good)}
+.item input:checked::after{content:"";width:7px;height:13px;border:solid #fff;border-width:0 3px 3px 0;transform:translateY(-1px) rotate(45deg)}
+.item label{flex:1;cursor:pointer}
+.item .d{display:block;font-size:13.5px;color:var(--text-2);margin-top:2px}
+.item.done label>span:first-child{color:var(--text-3);text-decoration:line-through;text-decoration-color:var(--text-3)}
+.item .flag{display:inline-block;font-size:11px;font-weight:700;color:var(--warn-ink);background:color-mix(in srgb,var(--warn) 18%,transparent);border-radius:6px;padding:1px 6px;margin-left:6px;vertical-align:1px}
+.tools{display:flex;gap:8px;justify-content:flex-end;margin-top:10px}
+.ghost{border:1px solid var(--line);background:transparent;border-radius:10px;padding:8px 12px;font-size:14px;cursor:pointer;color:var(--text-2)}
+
+/* diagrams */
+.diagram{display:block;width:100%;height:auto;margin-top:8px}
+.diagram text{font-family:var(--font)}
+.diag-ink{fill:var(--text)} .diag-ink-2{fill:var(--text-2)} .diag-line{stroke:var(--text-2)}
+.split{display:grid;gap:12px}
+@media (min-width:640px){.split{grid-template-columns:1fr 1fr}}
+.iso{perspective:900px;height:210px;display:grid;place-items:center;margin-top:6px}
+.tyre3d{position:relative;width:150px;height:150px;transform-style:preserve-3d;animation:spin 14s linear infinite}
+@media (prefers-reduced-motion: reduce){.tyre3d{animation:none;transform:rotateY(-35deg) rotateX(8deg)}}
+@keyframes spin{from{transform:rotateX(10deg) rotateY(0)}to{transform:rotateX(10deg) rotateY(360deg)}}
+.tyre3d .face{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle,#c9ccd1 0 30%,#2a2a2b 31% 33%,#222 34% 70%,#151515 71% 100%);box-shadow:inset 0 0 0 6px #111}
+.tyre3d .face.front{transform:translateZ(28px)}
+.tyre3d .face.back{transform:translateZ(-28px)}
+.tyre3d .tread{position:absolute;left:50%;top:50%;width:56px;height:16px;margin:-8px 0 0 -28px;background:repeating-linear-gradient(90deg,#1b1b1b 0 6px,#2d2d2d 6px 9px)}
+.tyre3d .dot-code{position:absolute;inset:0;transform:translateZ(29px);display:grid;place-items:center}
+.tyre3d .dot-code span{transform:translateY(-58px);font:700 10px/1 ui-monospace,Menlo,monospace;color:#ddd;letter-spacing:.05em;background:#000a;padding:2px 4px;border-radius:3px}
+
+/* negotiation */
+.ladder{position:relative;margin-top:14px}
+.ladder svg{width:100%;display:block;overflow:visible}
+.say{border-radius:14px;background:var(--surface-2);padding:12px 14px;margin-top:10px}
+.say .en{font-weight:600;font-size:15.5px}
+.say .es{color:var(--text-2);font-size:13.5px;margin-top:3px}
+.say .copy{float:right;border:0;background:transparent;color:var(--accent-ink);font-size:13px;font-weight:600;padding:2px 0 6px 10px;cursor:pointer}
+.tactics{counter-reset:t;list-style:none;padding:0;margin:8px 0 0}
+.tactics li{counter-increment:t;position:relative;padding:8px 0 8px 36px;border-top:1px solid var(--line)}
+.tactics li:first-child{border-top:0}
+.tactics li::before{content:counter(t);position:absolute;left:0;top:8px;width:24px;height:24px;border-radius:7px;background:var(--accent-soft);color:var(--accent-ink);font-weight:700;font-size:13px;display:grid;place-items:center}
+.callout{border-radius:14px;padding:12px 14px;background:var(--accent-soft);font-size:14.5px}
+.callout b{color:var(--accent-ink)}
+
+.alts{display:grid;gap:10px}
+.alt{display:flex;gap:12px;align-items:flex-start}
+.alt .rank{flex:none;width:30px;height:30px;border-radius:9px;background:var(--surface-2);display:grid;place-items:center;font-weight:700}
+textarea{width:100%;min-height:120px;border-radius:14px;border:1px solid var(--line);background:var(--surface);color:var(--text);padding:12px;font:16px/1.45 var(--font);resize:vertical}
+footer{padding:30px 0 10px;font-size:12.5px;color:var(--text-3)}
+.toast{position:fixed;left:50%;bottom:calc(18px + var(--safe-bottom));transform:translateX(-50%) translateY(20px);background:var(--text);color:var(--bg);padding:10px 16px;border-radius:999px;font-size:14px;opacity:0;transition:.25s;pointer-events:none;z-index:30}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <nav class="chips" id="chips" aria-label="Secciones">
+      <a class="chip" href="#resumen">Resumen</a>
+      <a class="chip" href="#inspeccion">3D</a>
+      <a class="chip" href="#mot">MOT</a>
+      <a class="chip" href="#plan">Plan</a>
+      <a class="chip" href="#checklist">Checklist</a>
+      <a class="chip" href="#manejo">Manejo</a>
+      <a class="chip" href="#negociar">Negociar</a>
+      <a class="chip" href="#pago">Pago</a>
+      <a class="chip" href="#alternativas">Plan B</a>
+    </nav>
+    <div class="progress-pill" aria-live="polite">
+      <svg class="ring" viewBox="0 0 22 22" aria-hidden="true"><circle class="track" cx="11" cy="11" r="9"/><circle class="val" id="ringVal" cx="11" cy="11" r="9" stroke-dasharray="56.55" stroke-dashoffset="56.55"/></svg>
+      <span id="progressText">0/0</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" id="resumen">
+    <div class="eyebrow">Guía de compra</div>
+    <h1>Honda Jazz 1.3 i‑VTEC SE CVT</h1>
+    <div class="sub">2016 · automático CVT · nafta · azul · 5 puertas</div>
+    <div class="plate" aria-label="Patente AF16 EHR"><b>UK</b>AF16 EHR</div>
+
+    <div id="inspeccion"></div>
+    <div class="stage" id="stage">
+      <svg class="fallback-svg" viewBox="0 0 400 200" aria-hidden="true">
+        <path d="M30 150 L40 120 L120 108 L170 70 L330 64 L362 80 L372 150 Z" fill="#2a5db0"/>
+        <path d="M178 76 L250 72 L250 104 L132 108 Z M258 72 L326 70 L352 86 L352 102 L258 104Z" fill="#0d1622"/>
+        <circle cx="105" cy="152" r="26" fill="#1b1b1c"/><circle cx="105" cy="152" r="14" fill="#c9ccd1"/>
+        <circle cx="305" cy="152" r="26" fill="#1b1b1c"/><circle cx="305" cy="152" r="14" fill="#c9ccd1"/>
+      </svg>
+      <div class="stage-hint" id="stageHint">Deslizá para girar · tocá los números</div>
+    </div>
+    <div class="views" role="group" aria-label="Vistas">
+      <button class="seg" data-view="tres">3/4</button>
+      <button class="seg" data-view="frente">Frente</button>
+      <button class="seg" data-view="lado">Lateral</button>
+      <button class="seg" data-view="atras">Atrás</button>
+    </div>
+    <div class="spotlist" id="spotList" role="group" aria-label="Puntos de inspección"></div>
+    <div class="card spot-panel" id="spotPanel" aria-live="polite"></div>
+
+    <div class="kpis">
+      <div class="kpi"><div class="k">Precio</div><div class="v">£6.995</div><div class="n">incluye admin fee</div></div>
+      <div class="kpi"><div class="k">Millas</div><div class="v">95.291</div><div class="n">último service a 92.124</div></div>
+      <div class="kpi"><div class="k">Dueños</div><div class="v">2</div><div class="n">service completo Honda</div></div>
+      <div class="kpi"><div class="k">Patente</div><div class="v">£35<small>/año</small></div><div class="n">111 g/km · seguro 13E</div></div>
+    </div>
+
+    <div class="actions">
+      <a class="btn primary" href="tel:+442077688031"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.8 2z"/></svg>Llamar</a>
+      <a class="btn" href="https://maps.apple.com/?q=Approved+Motors+Ltd&amp;address=350+London+Road,+Mitcham+CR4+3ND"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Cómo llegar</a>
+      <a class="btn" href="https://www.autotrader.co.uk/car-details/202610277380211"><svg viewBox="0 0 24 24"><path d="M14 3h7v7M10 14 21 3M21 14v7H3V3h7"/></svg>Ver aviso</a>
+    </div>
+    <p class="dealer muted"><b>Approved Motors Ltd</b> · 350 London Road, Mitcham CR4 3ND · todos los días 10–19 · (020) 7768 8031</p>
+
+    <div class="card verdict" style="margin-top:16px">
+      <div class="pill good"><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="currentColor" opacity=".15"/><path d="M4.5 8.2 7 10.5l4.5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>Veredicto: vale la pena ir a verlo</div>
+      <ul class="bullets">
+        <li><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.2 6.5 11l6-6.5" stroke="var(--good-ink)" stroke-width="2" fill="none" stroke-linecap="round"/></svg><span><b>Nunca falló un MOT</b> en 8 tests (2019–2026), sin huecos y sin corrosión ni suspensión.</span></li>
+        <li><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.2 6.5 11l6-6.5" stroke="var(--good-ink)" stroke-width="2" fill="none" stroke-linecap="round"/></svg><span><b>2 dueños y service completo en Honda</b>; auto familiar con uso parejo (~9k millas/año).</span></li>
+        <li><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.2 6.5 11l6-6.5" stroke="var(--good-ink)" stroke-width="2" fill="none" stroke-linecap="round"/></svg><span>Barato de tener: patente £35, seguro grupo 13, ~48–52 mpg reales, apto ULEZ.</span></li>
+        <li><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2.5 14 13.5H2z" fill="none" stroke="var(--warn-ink)" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 6.5v3.2M8 11.4v.1" stroke="var(--warn-ink)" stroke-width="1.8" stroke-linecap="round"/></svg><span><b>A revisar:</b> freno trasero derecho (advisory 2024), cubiertas y el aceite de la CVT.</span></li>
+        <li><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2.5 14 13.5H2z" fill="none" stroke="var(--warn-ink)" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 6.5v3.2M8 11.4v.1" stroke="var(--warn-ink)" stroke-width="1.8" stroke-linecap="round"/></svg><span>Precio en el techo del rango "Good" de Autotrader (£6.652–6.992): hay margen para ~£6.800.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="mot">
+    <div class="eyebrow">Historial MOT · gov.uk</div>
+    <h2>Millaje y advisories por año</h2>
+    <p class="muted">8 tests, todos aprobados a la primera. Tocá un punto para ver el detalle.</p>
+    <div class="card">
+      <div class="chart" id="motChart"><div class="tip" id="motTip" role="status"></div></div>
+      <div class="legend"><span><i class="sw"></i>MOT sin advisories</span><span><i class="sw hollow"></i>MOT con advisories</span><span><i class="sw dash"></i>Millaje del aviso (oct 2026)</span></div>
+      <details class="table"><summary>Ver como tabla</summary><div id="motTable"></div></details>
+    </div>
+    <div class="card" style="margin-top:10px">
+      <h3>Qué nos dice</h3>
+      <ul class="bullets">
+        <li>• <span><b>Uso parejo</b>: entre 6.400 y 12.200 millas por año. Nada raro de millaje.</span></li>
+        <li>• <span><b>Sillas de bebé atrás</b> (2022–2024): auto familiar. Revisá que los cinturones traseros enrollen bien.</span></li>
+        <li>• <span><b>2024: "service brake fluctuating"</b> atrás a la derecha → posible disco deformado. Probalo frenando firme.</span></li>
+        <li>• <span><b>Cubiertas</b> con bordes gastados o resquebrajadas en 2022–2024: mirá las actuales (profundidad + fecha DOT).</span></li>
+        <li>• <span>2025 y 2026 <b>sin ninguna advisory</b>.</span></li>
+      </ul>
+      <p style="margin-top:10px"><a href="https://www.check-mot.service.gov.uk/results?registration=AF16EHR&amp;checkRecalls=true">Abrir historial oficial (gov.uk)</a> · <a href="https://www.check-vehicle-recalls.service.gov.uk/">Chequear recalls</a></p>
+    </div>
+  </section>
+
+  <section id="plan">
+    <div class="eyebrow">El día de la visita</div>
+    <h2>Plan paso a paso</h2>
+    <ol class="timeline">
+      <li><span class="step">1</span><h3>Llamar antes</h3><p>Confirmar que sigue disponible, que se puede manejar y con qué seguro. Pedir que <b>no lo prendan</b> antes de que llegues.</p></li>
+      <li><span class="step">2</span><h3>Papeles primero</h3><p>V5C, libro de service, informe HPI. Si algo no coincide (VIN, millas, dueños), se termina ahí.</p></li>
+      <li><span class="step">3</span><h3>Inspección en frío · 15 min</h3><p>Exterior, cubiertas, frenos, motor sin arrancar, interior. Seguí el mapa 3D y el checklist.</p></li>
+      <li><span class="step">4</span><h3>Arranque en frío</h3><p>Escuchá los primeros 30 segundos: sin golpeteos ni humo azul/blanco espeso.</p></li>
+      <li><span class="step">5</span><h3>Prueba de manejo · 20–30 min</h3><p>CVT en tráfico, frenada firme, un tramo a 50–60 mph, estacionar y marcha atrás.</p></li>
+      <li><span class="step">6</span><h3>Después de manejar</h3><p>Mirar debajo por goteos, olores, y que no quede ninguna luz encendida.</p></li>
+      <li><span class="step">7</span><h3>Negociar</h3><p>Recién ahora se habla de precio. Usá los argumentos y frases de abajo.</p></li>
+      <li><span class="step">8</span><h3>Pagar y papeles</h3><p>Factura con todo lo incluido, seguro y patente activos antes de salir.</p></li>
+    </ol>
+  </section>
+
+  <section id="checklist">
+    <div class="eyebrow">Checklist interactivo</div>
+    <h2>Lo que hay que mirar y preguntar</h2>
+    <p class="muted">Se guarda en este teléfono. Los ítems con <span class="flag" style="margin:0">CLAVE</span> son los que salen del historial de este auto.</p>
+    <div id="checklists"></div>
+    <div class="tools"><button class="ghost" id="resetBtn" type="button">Reiniciar checklist</button></div>
+  </section>
+
+  <section id="manejo">
+    <div class="eyebrow">Prueba de manejo</div>
+    <h2>Cómo probar la CVT, los frenos y las cubiertas</h2>
+    <div class="split">
+      <div class="card">
+        <h3>Recorrido de prueba</h3>
+        <svg class="diagram" viewBox="0 0 340 190" role="img" aria-labelledby="routeT">
+          <title id="routeT">Velocidad sugerida durante la prueba: arranque suave, tráfico lento, aceleración media, tramo a 50–60 mph, frenada firme y estacionamiento.</title>
+          <g class="diag-line" stroke-width="1"><line x1="34" y1="160" x2="330" y2="160"/><line x1="34" y1="20" x2="34" y2="160"/></g>
+          <g font-size="10" class="diag-ink-2"><text x="4" y="164">0</text><text x="4" y="114">20</text><text x="4" y="68">40</text><text x="4" y="24">60</text><text x="296" y="178">tiempo</text><text x="2" y="12">mph</text></g>
+          <path d="M34 160 C50 160 56 135 70 135 L104 140 L118 128 L130 140 L150 120 C170 100 176 70 190 68 L206 40 L250 38 C262 38 266 150 276 158 L292 160 L300 150 L312 160 L330 160" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linejoin="round"/>
+          <g font-size="10.5" font-weight="600" class="diag-ink">
+            <circle cx="62" cy="140" r="9" fill="var(--accent)"/><text x="59" y="144" fill="#fff">1</text>
+            <circle cx="117" cy="122" r="9" fill="var(--accent)"/><text x="114" y="126" fill="#fff">2</text>
+            <circle cx="182" cy="82" r="9" fill="var(--accent)"/><text x="179" y="86" fill="#fff">3</text>
+            <circle cx="228" cy="28" r="9" fill="var(--accent)"/><text x="225" y="32" fill="#fff">4</text>
+            <circle cx="266" cy="110" r="9" fill="var(--accent)"/><text x="263" y="114" fill="#fff">5</text>
+            <circle cx="304" cy="140" r="9" fill="var(--accent)"/><text x="301" y="144" fill="#fff">6</text>
+          </g>
+        </svg>
+        <ol style="padding-left:18px;margin:6px 0 0;font-size:14.5px">
+          <li><b>Salida desde parado</b>: suave, sin tirones ni "patinar".</li>
+          <li><b>Tráfico lento 5–20 mph</b>: acelerá poquito y soltá varias veces. Un temblor/vibración tipo "judder" es la falla típica de esta CVT.</li>
+          <li><b>Aceleración media</b>: las RPM suben y la velocidad las acompaña; sin zumbido metálico.</li>
+          <li><b>50–60 mph</b>: ruido de rodamientos, volante derecho, sin vibraciones.</li>
+          <li><b>Frenada firme desde ~40 mph</b> (sin nadie atrás): recto, sin vibración en pedal ni volante.</li>
+          <li><b>Estacionar y marcha atrás</b>: dirección a tope sin ruidos, sensores andando, freno de mano que retenga.</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h3>Cubiertas: profundidad y edad</h3>
+        <div class="iso" aria-hidden="true"><div class="tyre3d"><div class="face back"></div><div class="face front"></div><div class="dot-code"><span>DOT 2423</span></div></div></div>
+        <svg class="diagram" viewBox="0 0 340 120" role="img" aria-labelledby="coinT">
+          <title id="coinT">Prueba de la moneda de 20 peniques: si se ve el borde exterior de la moneda, la banda de rodadura está cerca o por debajo del mínimo de 1,6 mm.</title>
+          <rect x="10" y="40" width="150" height="70" rx="6" fill="#222"/>
+          <g fill="#3a3a3a"><rect x="22" y="40" width="18" height="70"/><rect x="58" y="40" width="18" height="70"/><rect x="94" y="40" width="18" height="70"/><rect x="130" y="40" width="18" height="70"/></g>
+          <circle cx="85" cy="40" r="26" fill="#c9ccd1" stroke="#8b8e93" stroke-width="5"/>
+          <text x="85" y="44" text-anchor="middle" font-size="12" font-weight="700" fill="#555">20p</text>
+          <g font-size="12" class="diag-ink"><text x="176" y="30" font-weight="700">Moneda de 20p</text></g>
+          <g font-size="11.5" class="diag-ink-2"><text x="176" y="48">Metela en la ranura.</text><text x="176" y="64">¿Se ve el borde grueso?</text><text x="176" y="80">→ cerca de 1,6 mm (mínimo</text><text x="176" y="94">legal). Ideal: ≥ 3 mm.</text></g>
+        </svg>
+        <p style="font-size:14.5px;margin-top:8px"><b>Edad:</b> en el costado buscá "DOT" y los últimos 4 números: <b>semana + año</b> (ej. <b>2423</b> = semana 24 de 2023). Más de 6 años o con grietas → pedí cambio.</p>
+        <p style="font-size:14.5px"><b>Desgaste en los bordes</b> (como marcó el MOT) = presión baja o alineación: preguntá si la alinearon.</p>
+      </div>
+    </div>
+    <div class="card" style="margin-top:12px">
+      <h3>Discos de freno: cómo leerlos</h3>
+      <svg class="diagram" viewBox="0 0 340 150" role="img" aria-labelledby="discT">
+        <title id="discT">Corte de un disco de freno: el escalón o labio en el borde exterior indica desgaste; superficie con surcos o con óxido profundo también.</title>
+        <g transform="translate(20 20)">
+          <rect x="0" y="0" width="120" height="16" rx="2" fill="#8b8e93"/>
+          <rect x="0" y="94" width="120" height="16" rx="2" fill="#8b8e93"/>
+          <rect x="0" y="16" width="120" height="78" fill="#b9bcc1"/>
+          <text x="60" y="130" text-anchor="middle" font-size="11" class="diag-ink-2">Disco sano: liso, sin labio</text>
+        </g>
+        <g transform="translate(190 20)">
+          <rect x="0" y="0" width="120" height="16" rx="2" fill="#8b8e93"/>
+          <rect x="0" y="94" width="120" height="16" rx="2" fill="#8b8e93"/>
+          <path d="M0 16 H120 V94 H0Z" fill="#b9bcc1"/>
+          <path d="M8 16 H112 V26 H8Z M8 84 H112 V94 H8Z" fill="var(--surface)"/>
+          <path d="M112 16 V26 M112 84 V94" stroke="var(--bad)" stroke-width="3"/>
+          <line x1="128" y1="22" x2="150" y2="10" stroke="var(--bad)" stroke-width="1.5"/>
+          <text x="60" y="130" text-anchor="middle" font-size="11" class="diag-ink-2">Gastado: labio en el borde</text>
+        </g>
+      </svg>
+      <p style="font-size:14.5px">Mirá el disco trasero derecho por entre los rayos de la llanta: un <b>escalón en el borde</b>, surcos marcados u óxido grueso son motivo para pedir discos y pastillas nuevos (~£150–250 el eje).</p>
+    </div>
+  </section>
+
+  <section id="negociar">
+    <div class="eyebrow">Negociación</div>
+    <h2>Cuánto ofrecer y cómo decirlo</h2>
+    <div class="card">
+      <h3>Dónde está el precio</h3>
+      <div class="ladder" id="ladder"></div>
+      <div class="callout" style="margin-top:12px"><b>Plan:</b> primera oferta <b>£6.700</b> · objetivo <b>£6.800</b> · techo <b>£6.900</b> sin extras. Pagar £6.995 solo si incluyen algo concreto (cubiertas, discos, CVT o 12 meses de garantía).</div>
+    </div>
+
+    <div class="card" style="margin-top:12px">
+      <h3>Argumentos (en orden)</h3>
+      <ol class="tactics">
+        <li><b>Precio de mercado:</b> está en el techo del rango "Good" de Autotrader (£6.652–6.992).</li>
+        <li><b>Historial MOT:</b> advisory de freno trasero (2024) y cubiertas marcadas varios años → gasto cercano.</li>
+        <li><b>Está por pasar las 100.000 millas</b>, que baja su valor de reventa.</li>
+        <li><b>CVT:</b> si el libro no muestra cambio de aceite de la caja, es un trabajo de ~£150 que tendrías que hacer.</li>
+        <li><b>Pago completo hoy</b>, sin financiación ni parte de pago: es la venta más simple para ellos.</li>
+      </ol>
+    </div>
+
+    <div class="card" style="margin-top:12px">
+      <h3>Frases para decir (tocá "copiar")</h3>
+      <div id="phrases"></div>
+    </div>
+
+    <div class="card" style="margin-top:12px">
+      <h3>Tácticas</h3>
+      <ol class="tactics">
+        <li><b>Primero inspección, después precio.</b> Si te preguntan presupuesto: "depends on the car".</li>
+        <li><b>Nunca digas presupuesto ni cuota mensual.</b> Hablá siempre de precio final todo incluido.</li>
+        <li><b>Después de ofrecer, silencio.</b> Que hable el otro.</li>
+        <li><b>Cada concesión, a cambio de algo</b> ("si llegamos a £6.800, firmamos ahora").</li>
+        <li><b>Si no bajan, pedí extras</b>: cubiertas, discos traseros, cambio de aceite CVT, garantía de 12 meses, tanque lleno.</li>
+        <li><b>Estar dispuesto a irse.</b> Hay otros autos buenos (ver Plan B). Muchas veces llaman después.</li>
+        <li><b>Nada de seña</b> antes de manejarlo y ver los papeles.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="pago">
+    <div class="eyebrow">Cierre</div>
+    <h2>Pagar, papeles y salir manejando</h2>
+    <div class="card stack">
+      <div><h3>💳 Pagá algo con tarjeta de crédito</h3><p class="muted">Con al menos £100 del precio pagado con <b>tarjeta de crédito</b>, la Section 75 hace que el banco responda junto con el dealer por <b>todo</b> el auto. No te pueden cobrar recargo por pagar con tarjeta.</p></div>
+      <div><h3>🧾 La factura tiene que decir</h3><p class="muted">Precio final, millaje, VIN, "12 months MOT", términos de la garantía de 6 meses (quién la da, qué cubre, tope por reclamo) y cualquier trabajo o extra acordado.</p></div>
+      <div><h3>⚖️ Tus derechos (Consumer Rights Act 2015)</h3><p class="muted">Comprando a un dealer: si aparece una falla en los <b>primeros 30 días</b>, podés rechazarlo y pedir la plata. Hasta los <b>6 meses</b> se presume que la falla ya estaba: el dealer tiene que repararlo o devolverte el dinero.</p></div>
+      <div><h3>🛡️ Antes de arrancar</h3><p class="muted"><b>Seguro activo</b> (el dealer suele ofrecer "drive-away") y <b>patente pagada</b>: no se transfiere. Se paga online en gov.uk con el código de 12 dígitos del <b>V5C/2</b> (la parte verde que te dan).</p></div>
+      <div><h3>📬 Después</h3><p class="muted">El dealer avisa a DVLA el cambio de titular; el V5C nuevo llega por correo en unas semanas. Si tu zona exige permiso de estacionamiento, se tramita con factura + seguro + V5C/2.</p></div>
+    </div>
+  </section>
+
+  <section id="alternativas">
+    <div class="eyebrow">Plan B</div>
+    <h2>Si este no cierra</h2>
+    <div class="card alts">
+      <div class="alt"><span class="rank">1</span><div><b>Toyota Yaris 1.5 Hybrid Icon Plus · 2014 · YP14 AFJ</b><br><small>91.800 mi · £6.995 · service completo · MOT muy limpio · Shreeji Cars, Wembley</small></div></div>
+      <div class="alt"><span class="rank">2</span><div><b>Toyota Yaris 1.5 Hybrid Icon · 2015 · WM15 NWO</b><br><small>118.000 mi · £6.395 · service parcial · cubiertas descuidadas · B&amp;S Cars, Thornton Heath</small></div></div>
+      <div class="alt"><span class="rank">3</span><div><b>Toyota Auris 1.8 Hybrid Icon · 2013 · KM13 BBK</b><br><small>91.500 mi · £6.495 · cambio de color registrado, sin service · TM UK Trading, Hornchurch</small></div></div>
+      <p class="muted" style="margin:4px 0 0;font-size:13.5px">Los híbridos Toyota gastan menos y pierden menos valor; el Jazz es la mejor opción no híbrida y el auto mejor cuidado de todos.</p>
+    </div>
+  </section>
+
+  <section id="notas">
+    <div class="eyebrow">Notas</div>
+    <h2>Lo que te dijeron</h2>
+    <textarea id="notes" placeholder="Ej.: CVT cambiado a 80k · cubiertas DOT 1922 · última oferta £6.800…"></textarea>
+  </section>
+
+  <footer>Guía hecha con datos públicos del aviso y del historial MOT de gov.uk (consultados el 1 nov 2026). Verificá todo en persona. Modelo 3D ilustrativo, no a escala exacta.</footer>
+</main>
+<div class="toast" id="toast" role="status"></div>
+<script type="module" src="app.js"></script>
+</body>
+</html>
