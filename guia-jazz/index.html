@@ -223,6 +223,17 @@ td.num-c{font-variant-numeric:tabular-nums;white-space:nowrap}
 
 .pago>div{border-left:3px solid var(--accent);padding-left:12px}
 .pago h3{font-size:16.5px}
+.brake-stage{position:relative;height:300px;margin:10px -18px 0;touch-action:pan-y;user-select:none;-webkit-user-select:none;background:radial-gradient(110% 80% at 50% 50%,color-mix(in srgb,var(--accent) 10%,var(--surface)) 0%,var(--surface) 72%)}
+.brake-stage .fallback-disc{display:none;width:100%;height:100%}
+.brake-stage.no-webgl .fallback-disc{display:block}
+.tag3d{position:absolute;left:0;top:0;pointer-events:none;background:var(--text);color:var(--bg);font-size:12px;font-weight:600;line-height:1.2;padding:5px 8px;border-radius:8px;white-space:nowrap;box-shadow:0 3px 10px rgba(0,0,0,.25);transition:opacity .2s;margin-top:-8px}
+.tag3d::after{content:"";position:absolute;left:50%;bottom:-5px;margin-left:-5px;border:5px solid transparent;border-bottom:0;border-top-color:var(--text)}
+.tag3d.is-hidden{opacity:0}
+.seg-row{display:flex;gap:4px;margin-top:8px;background:var(--surface-2);border-radius:12px;padding:3px}
+.seg2{flex:1;border:0;background:transparent;border-radius:9px;padding:8px 6px;font-size:14px;font-weight:600;color:var(--text-2);cursor:pointer}
+.seg2[aria-pressed="true"]{background:var(--surface);color:var(--text);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.brake-caption{margin-top:10px;font-size:14.5px;min-height:3.2em}
+.brake-caption b.ok{color:var(--good-ink)} .brake-caption b.bad{color:var(--bad)}
 .alts{display:grid;gap:10px}
 .alt{display:flex;gap:12px;align-items:flex-start}
 .alt .rank{flex:none;width:30px;height:30px;border-radius:9px;background:var(--surface-2);display:grid;place-items:center;font-weight:700}
@@ -404,9 +415,10 @@ footer{padding:30px 0 10px;font-size:12.5px;color:var(--text-3)}
         <p style="font-size:14.5px"><b>Desgaste en los bordes</b> (como marcó el MOT) = presión baja o alineación: preguntá si la alinearon.</p>
       </div>
     </div>
-    <div class="card" style="margin-top:12px">
-      <h3>Discos de freno: cómo leerlos</h3>
-      <svg class="diagram" viewBox="0 0 340 170" role="img" aria-labelledby="discT">
+    <div class="card" style="margin-top:12px" id="frenos">
+      <h3>Disco de freno: qué vas a ver</h3>
+      <p class="muted" style="margin:4px 0 0;font-size:14px">El freno a revisar es el <b>trasero derecho</b> (lado del conductor). Girá con el dedo y cambiá entre sano y gastado.</p>
+      <div class="brake-stage" id="brakeStage"><svg class="diagram fallback-disc" viewBox="0 0 340 170" role="img" aria-labelledby="discT">
         <title id="discT">Corte de canto de un disco de freno. Sano: espesor parejo. Gastado: la zona donde roza la pastilla queda más fina y en el borde exterior se forma un labio.</title>
         <g transform="translate(40 18)">
           <rect x="0" y="0" width="34" height="120" rx="3" fill="#a9adb3"/>
@@ -426,8 +438,20 @@ footer{padding:30px 0 10px;font-size:12.5px;color:var(--text-3)}
           <text x="17" y="152" text-anchor="middle" font-size="12" font-weight="700" class="diag-ink">Gastado</text>
           <text x="17" y="166" text-anchor="middle" font-size="10.5" class="diag-ink-2">más fino + labio</text>
         </g>
-      </svg>
-      <p style="font-size:14.5px">Mirá el disco trasero derecho por entre los rayos de la llanta y pasá el dedo por el borde (con el auto frío): si sentís un <b>escalón</b>, surcos marcados u óxido grueso son motivo para pedir discos y pastillas nuevos (~£150–250 el eje).</p>
+      </svg></div>
+      <div class="seg-row" role="group" aria-label="Estado del disco">
+        <button class="seg2" type="button" data-worn="0">Sano</button><button class="seg2" type="button" data-worn="1">Gastado</button>
+      </div>
+      <div class="seg-row" role="group" aria-label="Vista">
+        <button class="seg2" type="button" data-bview="llanta">Por la llanta</button><button class="seg2" type="button" data-bview="disco">Disco</button><button class="seg2" type="button" data-bview="corte">Corte</button>
+      </div>
+      <div class="brake-caption" id="brakeCaption" aria-live="polite"></div>
+      <ol class="tactics" style="margin-top:6px">
+        <li><b>Mirá entre los rayos</b> de la llanta trasera derecha: atrás se ve el disco.</li>
+        <li><b>Pasá el dedo por el borde exterior</b> con el auto frío: un escalón de más de ~1 mm = gastado.</li>
+        <li><b>En la prueba, frená firme</b> desde ~40 mph: si vibra el pedal o el volante, el disco está deformado (lo que marcó el MOT 2024).</li>
+        <li>Si está gastado: pedí <b>discos + pastillas traseros nuevos</b> (~£150–250) o ese descuento.</li>
+      </ol>
     </div>
   </section>
 

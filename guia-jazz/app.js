@@ -170,6 +170,7 @@ notes.value = state.notes || '';
 notes.addEventListener('input', () => { state.notes = notes.value; save(); });
 
 function openList(id) {
+  if (id === 'frenos3d') { $('#frenos').scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
   const d = $(`#cl-${id}`);
   if (!d) return;
   d.open = true; state.open[id] = true; save();
@@ -180,7 +181,7 @@ function openList(id) {
 const HOTSPOTS = [
   { id: 'cubiertas', title: 'Cubiertas', list: 'ruedas', pos: [1.26, 0.31, 0.88], normal: [0.35, 0, 1],
     checks: ['Profundidad con la moneda de 20p (ideal ≥ 3 mm).', 'Bordes gastados o grietas: el MOT los marcó en 2022–2024.', 'Fecha DOT: si tienen más de 6 años, pedí cambio.'] },
-  { id: 'freno', title: 'Freno trasero derecho', list: 'ruedas', pos: [-1.27, 0.36, 0.88], normal: [-0.25, 0, 1],
+  { id: 'freno', title: 'Freno trasero derecho', list: 'frenos3d', pos: [-1.27, 0.36, 0.88], normal: [-0.25, 0, 1],
     checks: ['MOT 2024: "service brake fluctuating" de este lado.', 'Mirá el disco entre los rayos: sin labio en el borde ni surcos.', 'En la prueba, frená firme: sin vibración en pedal ni volante.'] },
   { id: 'motor', title: 'Motor y niveles', list: 'motor', pos: [1.72, 0.86, 0.15], normal: [0.6, 1, 0.1],
     checks: ['Tocá el motor: tiene que estar frío.', 'Aceite entre marcas; sin "mayonesa" en la tapa.', 'Refrigerante en nivel; sin pérdidas abajo.'] },
@@ -205,7 +206,7 @@ function showSpot(id) {
   const i = HOTSPOTS.findIndex((h) => h.id === id);
   const h = HOTSPOTS[i];
   if (!h) return;
-  panel.innerHTML = `<h3><span class="num">${i + 1}</span>${h.title}</h3><ul>${h.checks.map((c) => `<li>${c}</li>`).join('')}</ul><button class="linkbtn" type="button" data-list="${h.list}">Ir al checklist →</button>`;
+  panel.innerHTML = `<h3><span class="num">${i + 1}</span>${h.title}</h3><ul>${h.checks.map((c) => `<li>${c}</li>`).join('')}</ul><button class="linkbtn" type="button" data-list="${h.list}">${h.list === 'frenos3d' ? 'Ver el disco en 3D →' : 'Ir al checklist →'}</button>`;
   $('.linkbtn', panel).addEventListener('click', () => openList(h.list));
   document.querySelectorAll('#spotList .seg').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.id === id)));
   scrollSpotIntoView(id);
@@ -222,7 +223,8 @@ panel.innerHTML = '<h3>Mapa de inspección</h3><p class="muted" style="margin:6p
 
 let car = null;
 const stage = $('#stage');
-import('./car3d.js').then(({ mountCar }) => {
+const viz = import('./car3d.js');
+viz.then(({ mountCar }) => {
   car = mountCar(stage, {
     hotspots: HOTSPOTS,
     onSelect: (id) => { showSpot(id); $('#stageHint').style.opacity = 0; },
@@ -230,6 +232,36 @@ import('./car3d.js').then(({ mountCar }) => {
   if (!car) stage.classList.add('no-webgl');
 }).catch(() => stage.classList.add('no-webgl'));
 document.querySelectorAll('[data-view]').forEach((b) => b.addEventListener('click', () => car && car.setView(b.dataset.view)));
+
+// ---------------------------------------------------------------- brake disc 3D
+const BRAKE_TEXT = {
+  'llanta-0': '<b class="ok">Sano:</b> por entre los rayos se ve un anillo gris <b>parejo y brillante</b> donde roza la pastilla. El centro (la "campana") suele tener óxido anaranjado: eso es normal.',
+  'llanta-1': '<b class="bad">Gastado:</b> el anillo se ve <b>rayado como un vinilo</b>, con un borde exterior oscuro u oxidado y a veces manchas azuladas por recalentamiento.',
+  'disco-0': '<b class="ok">Sano:</b> superficie lisa, sin surcos que se sientan con la uña, y el borde a la misma altura que la zona de frenado.',
+  'disco-1': '<b class="bad">Gastado:</b> surcos concéntricos, manchas azuladas y un <b>reborde (labio)</b> oxidado en el borde exterior.',
+  'corte-0': '<b class="ok">Sano, en corte:</b> el disco tiene el <b>mismo espesor</b> de punta a punta. Al pasar el dedo no hay escalón.',
+  'corte-1': '<b class="bad">Gastado, en corte:</b> la pastilla comió la zona central y dejó un <b>escalón en el borde</b> (exagerado acá para que se vea). Más de ~1 mm = cambiar discos y pastillas.',
+};
+const brakeStage = $('#brakeStage');
+let brake = null;
+const brakeState = { worn: true, view: 'llanta' };
+function syncBrakeUI() {
+  document.querySelectorAll('[data-worn]').forEach((b) => b.setAttribute('aria-pressed', String((b.dataset.worn === '1') === brakeState.worn)));
+  document.querySelectorAll('[data-bview]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.bview === brakeState.view)));
+  $('#brakeCaption').innerHTML = BRAKE_TEXT[`${brakeState.view}-${brakeState.worn ? 1 : 0}`];
+}
+document.querySelectorAll('[data-worn]').forEach((b) => b.addEventListener('click', () => { brakeState.worn = b.dataset.worn === '1'; brake?.set(brakeState); syncBrakeUI(); }));
+document.querySelectorAll('[data-bview]').forEach((b) => b.addEventListener('click', () => { brakeState.view = b.dataset.bview; brake?.set(brakeState); syncBrakeUI(); }));
+syncBrakeUI();
+// Mount only when it gets close to the screen (saves memory and battery on load).
+new IntersectionObserver((entries, obs) => {
+  if (!entries[0].isIntersecting) return;
+  obs.disconnect();
+  viz.then(({ mountBrake }) => {
+    brake = mountBrake(brakeStage);
+    if (!brake) brakeStage.classList.add('no-webgl'); else brake.set(brakeState);
+  }).catch(() => brakeStage.classList.add('no-webgl'));
+}, { rootMargin: '400px 0px' }).observe(brakeStage);
 
 // ---------------------------------------------------------------- MOT chart
 const MOT = [
