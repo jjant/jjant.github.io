@@ -1,5 +1,5 @@
 // Offline cache for the buying guide (scope: this folder only).
-const CACHE = 'guia-jazz-v1';
+const CACHE = 'guia-jazz-v2';
 const FILES = ['./', './index.html', './app.js', './car3d.js', './manifest.webmanifest', './icon-180.png', './icon-512.png'];
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(FILES)).then(() => self.skipWaiting()));
