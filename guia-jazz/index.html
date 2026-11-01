@@ -70,17 +70,18 @@ section{padding:34px 0 8px}
 
 /* hero */
 .hero{padding-top:18px}
-.hero h1{font-size:34px;margin:6px 0 4px}
+.hero h1{font-size:30px;margin:4px 0 2px}
 .hero .sub{color:var(--text-2);font-size:16px}
-.plate{display:inline-flex;align-items:center;gap:8px;margin-top:10px;background:#f6cf2a;color:#111;border-radius:6px;font:700 18px/1 "Arial Narrow",Arial,sans-serif;letter-spacing:.06em;padding:6px 10px 6px 0;overflow:hidden;box-shadow:inset 0 0 0 2px #111}
+.hero-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:8px}
+.plate{display:inline-flex;align-items:center;gap:8px;background:#f6cf2a;color:#111;border-radius:6px;font:700 18px/1 "Arial Narrow",Arial,sans-serif;letter-spacing:.06em;padding:6px 10px 6px 0;overflow:hidden;box-shadow:inset 0 0 0 2px #111}
 .plate b{background:#1d3f9c;color:#fff;font:700 10px/1 var(--font);padding:9px 5px;margin:-6px 0}
-.stage{position:relative;height:270px;margin:14px -16px 0;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.stage{position:relative;height:270px;margin:12px -16px 0;touch-action:pan-y;user-select:none;-webkit-user-select:none;background:radial-gradient(120% 75% at 50% 62%,color-mix(in srgb,var(--accent) 12%,var(--surface)) 0%,var(--bg) 70%)}
 @media (min-width:640px){.stage{height:380px;margin:14px 0 0}}
 .car3d-canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
 .hotspot-layer{position:absolute;inset:0;pointer-events:none}
-.hotspot{position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;border:2px solid #fff;background:var(--accent);color:#fff;font:700 13px/26px var(--font);text-align:center;padding:0;pointer-events:auto;box-shadow:0 2px 8px rgba(0,0,0,.35);transition:opacity .2s,background .2s;cursor:pointer}
+.hotspot{position:absolute;left:0;top:0;width:26px;height:26px;border-radius:50%;border:2px solid #fff;background:var(--accent);color:#fff;font:700 12px/22px var(--font);will-change:transform;text-align:center;padding:0;pointer-events:auto;box-shadow:0 2px 8px rgba(0,0,0,.35);transition:opacity .2s,background .2s;cursor:pointer}
 .hotspot::after{content:"";position:absolute;inset:-9px;border-radius:50%}
-.hotspot.is-active{background:#fff;color:var(--accent-ink);border-color:var(--accent)}
+.hotspot.is-active{background:#fff;color:var(--accent-ink);border-color:var(--accent);box-shadow:0 0 0 6px color-mix(in srgb,var(--accent) 30%,transparent),0 2px 8px rgba(0,0,0,.35)}
 .hotspot.is-hidden{opacity:0;pointer-events:none}
 .stage-hint{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);font-size:12px;color:var(--text-3);background:color-mix(in srgb,var(--surface) 80%,transparent);padding:4px 10px;border-radius:999px;pointer-events:none;white-space:nowrap}
 .views{display:flex;gap:6px;justify-content:center;margin-top:8px;flex-wrap:wrap}
@@ -163,7 +164,8 @@ td.num-c{font-variant-numeric:tabular-nums;white-space:nowrap}
 .cl+.cl{margin-top:10px}
 .cl>summary{list-style:none;display:flex;align-items:center;gap:12px;padding:15px 16px;cursor:pointer}
 .cl>summary::-webkit-details-marker{display:none}
-.cl .emoji{font-size:22px;width:28px;text-align:center}
+.cl .emoji{flex:none;width:30px;height:30px;border-radius:9px;background:var(--accent-soft);color:var(--accent-ink);display:grid;place-items:center;font-weight:700;font-size:14px}
+.cl.all .emoji{background:var(--good);color:#fff}
 .cl .t{flex:1}
 .cl .t b{display:block;font-size:16px}
 .cl .t small{font-size:12.5px}
@@ -173,13 +175,17 @@ td.num-c{font-variant-numeric:tabular-nums;white-space:nowrap}
 .cl .chev{transition:transform .2s;color:var(--text-3)}
 .cl[open] .chev{transform:rotate(90deg)}
 .items{list-style:none;margin:0;padding:0 8px 8px}
-.item{display:flex;gap:12px;align-items:flex-start;padding:11px 8px;border-top:1px solid var(--line)}
-.item input{appearance:none;-webkit-appearance:none;flex:none;width:26px;height:26px;margin:0;border-radius:8px;border:2px solid var(--text-3);display:grid;place-items:center;cursor:pointer;transition:background .15s,border-color .15s}
-.item input:checked{background:var(--good);border-color:var(--good)}
-.item input:checked::after{content:"";width:7px;height:13px;border:solid #fff;border-width:0 3px 3px 0;transform:translateY(-1px) rotate(45deg)}
-.item label{flex:1;cursor:pointer}
+.item{position:relative;padding:11px 8px;border-top:1px solid var(--line)}
+.item input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.item label{flex:1;cursor:pointer;display:flex;gap:12px;align-items:flex-start}
+.box{flex:none;width:26px;height:26px;border-radius:8px;border:2px solid var(--text-3);display:grid;place-items:center;transition:background .15s,border-color .15s}
+.box svg{width:16px;height:16px;opacity:0;transition:opacity .15s}
+.item input:checked+label .box{background:var(--good);border-color:var(--good)}
+.item input:checked+label .box svg{opacity:1}
+.item input:focus-visible+label .box{outline:2px solid var(--accent);outline-offset:2px}
+.txt{flex:1}
 .item .d{display:block;font-size:13.5px;color:var(--text-2);margin-top:2px}
-.item.done label>span:first-child{color:var(--text-3);text-decoration:line-through;text-decoration-color:var(--text-3)}
+.item.done .txt>span:first-child{color:var(--text-3);text-decoration:line-through;text-decoration-color:var(--text-3)}
 .item .flag{display:inline-block;font-size:11px;font-weight:700;color:var(--warn-ink);background:color-mix(in srgb,var(--warn) 18%,transparent);border-radius:6px;padding:1px 6px;margin-left:6px;vertical-align:1px}
 .tools{display:flex;gap:8px;justify-content:flex-end;margin-top:10px}
 .ghost{border:1px solid var(--line);background:transparent;border-radius:10px;padding:8px 12px;font-size:14px;cursor:pointer;color:var(--text-2)}
@@ -215,6 +221,8 @@ td.num-c{font-variant-numeric:tabular-nums;white-space:nowrap}
 .callout{border-radius:14px;padding:12px 14px;background:var(--accent-soft);font-size:14.5px}
 .callout b{color:var(--accent-ink)}
 
+.pago>div{border-left:3px solid var(--accent);padding-left:12px}
+.pago h3{font-size:16.5px}
 .alts{display:grid;gap:10px}
 .alt{display:flex;gap:12px;align-items:flex-start}
 .alt .rank{flex:none;width:30px;height:30px;border-radius:9px;background:var(--surface-2);display:grid;place-items:center;font-weight:700}
@@ -250,8 +258,7 @@ footer{padding:30px 0 10px;font-size:12.5px;color:var(--text-3)}
   <section class="hero" id="resumen">
     <div class="eyebrow">Guía de compra</div>
     <h1>Honda Jazz 1.3 i‑VTEC SE CVT</h1>
-    <div class="sub">2016 · automático CVT · nafta · azul · 5 puertas</div>
-    <div class="plate" aria-label="Patente AF16 EHR"><b>UK</b>AF16 EHR</div>
+    <div class="hero-meta"><div class="plate" aria-label="Patente AF16 EHR"><b>UK</b>AF16 EHR</div><div class="sub">2016 · CVT · nafta · azul</div></div>
 
     <div id="inspeccion"></div>
     <div class="stage" id="stage">
@@ -374,7 +381,16 @@ footer{padding:30px 0 10px;font-size:12.5px;color:var(--text-3)}
       </div>
       <div class="card">
         <h3>Cubiertas: profundidad y edad</h3>
-        <div class="iso" aria-hidden="true"><div class="tyre3d"><div class="face back"></div><div class="face front"></div><div class="dot-code"><span>DOT 2423</span></div></div></div>
+        <svg class="diagram" viewBox="0 0 340 150" role="img" aria-labelledby="dotT">
+          <title id="dotT">Costado de la cubierta con el código DOT; los últimos cuatro dígitos indican semana y año de fabricación.</title>
+          <circle cx="90" cy="75" r="70" fill="#1d1d1e"/><circle cx="90" cy="75" r="40" fill="#c9ccd1"/><circle cx="90" cy="75" r="40" fill="none" stroke="#2c2c2d" stroke-width="6"/>
+          <path id="arcDot" d="M35 75 A55 55 0 0 1 145 75" fill="none"/>
+          <text font-size="10.5" font-weight="700" fill="#d8d8d8" letter-spacing="1.5"><textPath href="#arcDot" startOffset="50%" text-anchor="middle">DOT 4B7X 2423</textPath></text>
+          <rect x="112" y="18" width="38" height="18" rx="4" fill="none" stroke="#fab219" stroke-width="2.5"/>
+          <line x1="150" y1="27" x2="196" y2="40" stroke="#fab219" stroke-width="2"/>
+          <g class="diag-ink"><text x="200" y="38" font-size="20" font-weight="800">24 · 23</text></g>
+          <g class="diag-ink-2" font-size="11.5"><text x="200" y="56">semana 24 · año 2023</text><text x="200" y="84">Buscá el óvalo con 4</text><text x="200" y="99">números al final del DOT.</text><text x="200" y="122">&gt; 6 años → cambiarla.</text></g>
+        </svg>
         <svg class="diagram" viewBox="0 0 340 120" role="img" aria-labelledby="coinT">
           <title id="coinT">Prueba de la moneda de 20 peniques: si se ve el borde exterior de la moneda, la banda de rodadura está cerca o por debajo del mínimo de 1,6 mm.</title>
           <rect x="10" y="40" width="150" height="70" rx="6" fill="#222"/>
@@ -390,25 +406,28 @@ footer{padding:30px 0 10px;font-size:12.5px;color:var(--text-3)}
     </div>
     <div class="card" style="margin-top:12px">
       <h3>Discos de freno: cómo leerlos</h3>
-      <svg class="diagram" viewBox="0 0 340 150" role="img" aria-labelledby="discT">
-        <title id="discT">Corte de un disco de freno: el escalón o labio en el borde exterior indica desgaste; superficie con surcos o con óxido profundo también.</title>
-        <g transform="translate(20 20)">
-          <rect x="0" y="0" width="120" height="16" rx="2" fill="#8b8e93"/>
-          <rect x="0" y="94" width="120" height="16" rx="2" fill="#8b8e93"/>
-          <rect x="0" y="16" width="120" height="78" fill="#b9bcc1"/>
-          <text x="60" y="130" text-anchor="middle" font-size="11" class="diag-ink-2">Disco sano: liso, sin labio</text>
+      <svg class="diagram" viewBox="0 0 340 170" role="img" aria-labelledby="discT">
+        <title id="discT">Corte de canto de un disco de freno. Sano: espesor parejo. Gastado: la zona donde roza la pastilla queda más fina y en el borde exterior se forma un labio.</title>
+        <g transform="translate(40 18)">
+          <rect x="0" y="0" width="34" height="120" rx="3" fill="#a9adb3"/>
+          <rect x="11" y="118" width="12" height="18" fill="#7d8187"/>
+          <text x="17" y="152" text-anchor="middle" font-size="12" font-weight="700" class="diag-ink">Sano</text>
+          <text x="17" y="166" text-anchor="middle" font-size="10.5" class="diag-ink-2">espesor parejo</text>
         </g>
-        <g transform="translate(190 20)">
-          <rect x="0" y="0" width="120" height="16" rx="2" fill="#8b8e93"/>
-          <rect x="0" y="94" width="120" height="16" rx="2" fill="#8b8e93"/>
-          <path d="M0 16 H120 V94 H0Z" fill="#b9bcc1"/>
-          <path d="M8 16 H112 V26 H8Z M8 84 H112 V94 H8Z" fill="var(--surface)"/>
-          <path d="M112 16 V26 M112 84 V94" stroke="var(--bad)" stroke-width="3"/>
-          <line x1="128" y1="22" x2="150" y2="10" stroke="var(--bad)" stroke-width="1.5"/>
-          <text x="60" y="130" text-anchor="middle" font-size="11" class="diag-ink-2">Gastado: labio en el borde</text>
+        <g transform="translate(190 18)">
+          <path d="M0 0 H34 V10 H29 V120 H5 V10 H0 Z" fill="#a9adb3"/>
+          <rect x="11" y="118" width="12" height="18" fill="#7d8187"/>
+          <path d="M34 0 V10 H29" fill="none" stroke="#d03b3b" stroke-width="3"/>
+          <path d="M0 0 V10 H5" fill="none" stroke="#d03b3b" stroke-width="3"/>
+          <line x1="40" y1="5" x2="78" y2="-2" stroke="#d03b3b" stroke-width="1.5"/>
+          <text x="82" y="2" font-size="11.5" font-weight="700" fill="#d03b3b">labio</text>
+          <line x1="40" y1="60" x2="78" y2="60" class="diag-line" stroke-width="1.2"/>
+          <text x="82" y="57" font-size="11" class="diag-ink-2">zona de</text><text x="82" y="71" font-size="11" class="diag-ink-2">la pastilla</text>
+          <text x="17" y="152" text-anchor="middle" font-size="12" font-weight="700" class="diag-ink">Gastado</text>
+          <text x="17" y="166" text-anchor="middle" font-size="10.5" class="diag-ink-2">más fino + labio</text>
         </g>
       </svg>
-      <p style="font-size:14.5px">Mirá el disco trasero derecho por entre los rayos de la llanta: un <b>escalón en el borde</b>, surcos marcados u óxido grueso son motivo para pedir discos y pastillas nuevos (~£150–250 el eje).</p>
+      <p style="font-size:14.5px">Mirá el disco trasero derecho por entre los rayos de la llanta y pasá el dedo por el borde (con el auto frío): si sentís un <b>escalón</b>, surcos marcados u óxido grueso son motivo para pedir discos y pastillas nuevos (~£150–250 el eje).</p>
     </div>
   </section>
 
@@ -454,12 +473,12 @@ footer{padding:30px 0 10px;font-size:12.5px;color:var(--text-3)}
   <section id="pago">
     <div class="eyebrow">Cierre</div>
     <h2>Pagar, papeles y salir manejando</h2>
-    <div class="card stack">
-      <div><h3>💳 Pagá algo con tarjeta de crédito</h3><p class="muted">Con al menos £100 del precio pagado con <b>tarjeta de crédito</b>, la Section 75 hace que el banco responda junto con el dealer por <b>todo</b> el auto. No te pueden cobrar recargo por pagar con tarjeta.</p></div>
-      <div><h3>🧾 La factura tiene que decir</h3><p class="muted">Precio final, millaje, VIN, "12 months MOT", términos de la garantía de 6 meses (quién la da, qué cubre, tope por reclamo) y cualquier trabajo o extra acordado.</p></div>
-      <div><h3>⚖️ Tus derechos (Consumer Rights Act 2015)</h3><p class="muted">Comprando a un dealer: si aparece una falla en los <b>primeros 30 días</b>, podés rechazarlo y pedir la plata. Hasta los <b>6 meses</b> se presume que la falla ya estaba: el dealer tiene que repararlo o devolverte el dinero.</p></div>
-      <div><h3>🛡️ Antes de arrancar</h3><p class="muted"><b>Seguro activo</b> (el dealer suele ofrecer "drive-away") y <b>patente pagada</b>: no se transfiere. Se paga online en gov.uk con el código de 12 dígitos del <b>V5C/2</b> (la parte verde que te dan).</p></div>
-      <div><h3>📬 Después</h3><p class="muted">El dealer avisa a DVLA el cambio de titular; el V5C nuevo llega por correo en unas semanas. Si tu zona exige permiso de estacionamiento, se tramita con factura + seguro + V5C/2.</p></div>
+    <div class="card stack pago">
+      <div><h3>Pagá algo con tarjeta de crédito</h3><p class="muted">Con al menos £100 del precio pagado con <b>tarjeta de crédito</b>, la Section 75 hace que el banco responda junto con el dealer por <b>todo</b> el auto. No te pueden cobrar recargo por pagar con tarjeta.</p></div>
+      <div><h3>La factura tiene que decir</h3><p class="muted">Precio final, millaje, VIN, "12 months MOT", términos de la garantía de 6 meses (quién la da, qué cubre, tope por reclamo) y cualquier trabajo o extra acordado.</p></div>
+      <div><h3>Tus derechos (Consumer Rights Act 2015)</h3><p class="muted">Comprando a un dealer: si aparece una falla en los <b>primeros 30 días</b>, podés rechazarlo y pedir la plata. Hasta los <b>6 meses</b> se presume que la falla ya estaba: el dealer tiene que repararlo o devolverte el dinero.</p></div>
+      <div><h3>Antes de arrancar</h3><p class="muted"><b>Seguro activo</b> (el dealer suele ofrecer "drive-away") y <b>patente pagada</b>: no se transfiere. Se paga online en gov.uk con el código de 12 dígitos del <b>V5C/2</b> (la parte verde que te dan).</p></div>
+      <div><h3>Después</h3><p class="muted">El dealer avisa a DVLA el cambio de titular; el V5C nuevo llega por correo en unas semanas. Si tu zona exige permiso de estacionamiento, se tramita con factura + seguro + V5C/2.</p></div>
     </div>
   </section>
 

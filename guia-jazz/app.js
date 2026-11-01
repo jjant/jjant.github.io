@@ -115,7 +115,7 @@ function renderChecklists() {
   for (const l of LISTS) {
     const d = el('details', { class: 'cl', id: `cl-${l.id}` });
     if (state.open[l.id]) d.open = true;
-    d.innerHTML = `<summary><span class="emoji" aria-hidden="true">${l.emoji}</span><span class="t"><b>${l.title}</b>${l.sub ? `<small>${l.sub}</small>` : ''}<span class="bar"><i></i></span></span><span class="count"></span><svg class="chev" width="10" height="16" viewBox="0 0 10 16" aria-hidden="true"><path d="M2 2l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></summary>`;
+    d.innerHTML = `<summary><span class="emoji" aria-hidden="true">${LISTS.indexOf(l) + 1}</span><span class="t"><b>${l.title}</b>${l.sub ? `<small>${l.sub}</small>` : ''}<span class="bar"><i></i></span></span><span class="count"></span><svg class="chev" width="10" height="16" viewBox="0 0 10 16" aria-hidden="true"><path d="M2 2l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></summary>`;
     const ul = el('ul', { class: 'items' });
     l.items.forEach(([text, detail, key], i) => {
       const id = `${l.id}.${i}`;
@@ -130,7 +130,7 @@ function renderChecklists() {
         save(); updateProgress();
         if (cb.checked && navigator.vibrate) navigator.vibrate(8);
       });
-      const lab = el('label', { for: `c-${id}` }, `<span>${text}${key ? '<span class="flag">CLAVE</span>' : ''}</span>${detail ? `<span class="d">${detail}</span>` : ''}`);
+      const lab = el('label', { for: `c-${id}` }, `<span class="box" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3.5 8.5 6.5 11.5 12.5 5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="txt"><span>${text}${key ? '<span class="flag">CLAVE</span>' : ''}</span>${detail ? `<span class="d">${detail}</span>` : ''}</span>`);
       li.append(cb, lab);
       ul.appendChild(li);
     });
@@ -151,6 +151,7 @@ function updateProgress() {
     if (d) {
       $('.count', d).textContent = `${c}/${n}`;
       $('.bar i', d).style.width = `${(c / n) * 100}%`;
+      d.classList.toggle('all', c === n);
     }
   }
   const total = allIds.length;
@@ -210,7 +211,8 @@ function showSpot(id) {
   scrollSpotIntoView(id);
 }
 const spotList = $('#spotList');
-const scrollSpotIntoView = (id) => spotList.querySelector(`[data-id="${id}"]`)?.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+const centerIn = (row, item) => { if (row && item) row.scrollTo({ left: item.offsetLeft - (row.clientWidth - item.offsetWidth) / 2, behavior: 'smooth' }); };
+const scrollSpotIntoView = (id) => centerIn(spotList, spotList.querySelector(`[data-id="${id}"]`));
 HOTSPOTS.forEach((h, i) => {
   const b = el('button', { class: 'seg', type: 'button', 'data-id': h.id }, `${i + 1} · ${h.title}`);
   b.addEventListener('click', () => { if (car) car.select(h.id); else showSpot(h.id); });
@@ -330,7 +332,7 @@ function drawLadder() {
         <text x="${X}" y="${k.up ? y2 + 1 : y2 + 17}" text-anchor="${anchor}" font-size="11" fill="var(--text-2)">${k.t}</text>`;
     }).join('')}
   </svg>
-  <div class="legend"><span><i class="sw" style="border-radius:3px;background:var(--accent-soft);box-shadow:inset 0 0 0 1.5px var(--accent)"></i>Rango "Good" de Autotrader: £6.652–6.992</span><span>izquierda = más barato · derecha = "Fair"</span></div>`;
+  <div class="legend"><span><i class="sw" style="border-radius:3px;background:var(--accent-soft);box-shadow:inset 0 0 0 1.5px var(--accent)"></i>Rango "Good" de Autotrader: £6.652–6.992</span></div>`;
 }
 
 // ---------------------------------------------------------------- phrases
@@ -357,7 +359,7 @@ const io = new IntersectionObserver((entries) => {
   for (const en of entries) if (en.isIntersecting) {
     const i = secs.indexOf(en.target);
     chips.forEach((c, j) => c.classList.toggle('is-on', j === i));
-    chips[i]?.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+    centerIn($('#chips'), chips[i]);
   }
 }, { rootMargin: '-45% 0px -50% 0px' });
 secs.forEach((s) => s && io.observe(s));
